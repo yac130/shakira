@@ -516,6 +516,18 @@ html {
         padding: 0;
         text-align: center;
     }
+    .box-canciones ul,
+    .box-sencillos ul{
+        max-width: 1010px;
+        text-align: right;
+    }
+    ul.notas-hits{
+        max-width: 1010px;
+        text-align: right;
+    }
+        .box-hits-spotify ul.notas-hits li{
+            margin-bottom: 10px;
+        }
         .box-portadas-discos ul li,
         .box-hits ul li{
             display: inline-block;
@@ -533,27 +545,33 @@ html {
                 margin: 0 auto;                
                
             }
+    .box-hits ul.hits li{
+        max-width: 60px;
+    }
     .box-canciones{
         margin: 10px auto 40px;  
         opacity: 0;      
         position: relative;     
         top: -200px;  
-    }   
+    }           
         .box-canciones ul li,
         .box-sencillos ul li,
         .box-hits-spotify ul li{
             display: inline-block;
-            max-width: 65px;
+            margin: 0 10px;
+            max-width: 60px;
             text-align: left;
             vertical-align: top;
         }
             .box-canciones ul li p{
                 background-color: #F81616;
+                box-sizing: border-box;
                 color: #fff;
-                font: 22px/1.1 'liquidamber-reguluploadedfile';
-                margin: 0 auto 10px;
-                max-width: 25px;
-                padding: 2px 5px;
+                font: 18px / 1.1 'liquidamber-reguluploadedfile';
+                margin: 10px auto 10px 0;
+                max-width: 90%;
+                padding: 2px 1px;                
+                text-align: center;
             }
             .box-canciones ul li svg,
             .box-sencillos ul li svg,
@@ -561,6 +579,9 @@ html {
                 display: inline-block;
                 max-width: 15px;
                 vertical-align: top;
+            }
+            .box-canciones p.indicador-disco{
+                background-color: #2e2e2e;
             }
     .box-sencillos{
         margin: 10px auto 40px;
@@ -611,6 +632,7 @@ html {
 
     }
         .box-hits ul li{
+            
             text-align: center;
         }
             .box-hits ul li p{
@@ -2135,6 +2157,14 @@ html {
     }
     .color-blanco span i{
         display: inline-block;
+    }
+    .box-canciones ul, 
+    .box-sencillos ul,
+    ul.notas-hits{
+        max-width: 90%;
+    }
+    .box-hits ul.hits li{
+        max-width: 65px;
     }
 }
 
