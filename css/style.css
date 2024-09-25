@@ -93,7 +93,7 @@ html {
 
 .main-drag{
     background-color: #101010;
-    background-image: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/img/textura-negra.gif');
+    background-image: url('https://yac130.github.io/shakira/img/textura-negra.gif');
     background-size: cover;
     margin: 0 auto;
     padding: 9vh 0;
@@ -148,7 +148,7 @@ html {
                 position: absolute;
             }
             .grab-element::after{
-                background: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/img/manito.webp') no-repeat;
+                background: url('https://yac130.github.io/shakira/shakira/img/manito.webp') no-repeat;
                 background-size: 100%;
                 content: '';
                 height: 30px;
@@ -199,7 +199,7 @@ html {
             }
 .box-main-portada{
     /*background-color: #101010;*/
-    background-image: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/img/bg-estrellas-2.gif');
+    background-image: url('https://yac130.github.io/shakira/img/bg-estrellas-2.gif');
     background-repeat: no-repeat;
     background-size: 100%;
     height: 99vh;
@@ -437,7 +437,7 @@ html {
 
 .box-bajada{
     background-color: #101010;
-    background-image: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/img/textura-negra.gif');
+    background-image: url('https://yac130.github.io/shakira/img/textura-negra.gif');
     background-size: cover;
     margin: 0 auto;
     padding: 5vh 0 30vh;
@@ -455,7 +455,7 @@ html {
         }
 .main-discos{
     background: #101010;
-    background-image: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/img/textura-negra.gif');
+    background-image: url('https://yac130.github.io/shakira/img/textura-negra.gif');
     background-size: cover;
     position: relative;
     z-index: 40;    
@@ -684,7 +684,7 @@ html {
                 }
 .main-api-spotify{
     /*background-color: #000;*/
-    background-image: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/img/textura-negra.gif');
+    background-image: url('https://yac130.github.io/shakira/img/textura-negra.gif');
     background-size: contain;
     padding-top: 70px;
     position: relative;
@@ -1049,7 +1049,7 @@ html {
             }
 .box-separador{
     background-color: #101010;
-    background-image: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/img/textura-negra.gif');
+    background-image: url('https://yac130.github.io/shakira/img/textura-negra.gif');
     background-size: cover;
     padding: 50px 0;
     position: relative;
@@ -1162,7 +1162,7 @@ html {
                     }
 .box-karaoke{
     background: #101010;
-    background-image: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/img/textura-negra.gif');
+    background-image: url('https://yac130.github.io/shakira/img/textura-negra.gif');
     background-size: cover;
     padding: 50px 0;
     position: relative;
@@ -1326,7 +1326,7 @@ html {
         text-align: center;
     }
 .main-sentimientos{
-    background-image: url(https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/img/textura-negra.gif);
+    background-image: url('https://yac130.github.io/shakira/img/textura-negra.gif');
     background-size: 100%;
 }
 
@@ -1548,7 +1548,7 @@ html {
         }
 #startScreen{   
     background-color: #101010;
-    background-image: url(https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/img/textura-negra.gif);
+    background-image: url('https://yac130.github.io/shakira/img/textura-negra.gif');
     background-size: 100%;
     height: 100vh;
     position: relative;
@@ -1846,7 +1846,7 @@ html {
 }
 .box-metodologia{
     background-color: #101010;
-    background-image: url(https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/img/textura-negra.gif);
+    background-image: url('https://yac130.github.io/shakira/img/textura-negra.gif');
     background-size: 100%;
     padding: 80px 0;
     position: relative;
@@ -1879,7 +1879,7 @@ html {
     position: relative;
     text-align: center;
     z-index: 40;
-    background-image: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/img/bg-estrellas-2.gif');
+    background-image: url('https://yac130.github.io/shakira/img/bg-estrellas-2.gif');
     mix-blend-mode: lighten;    
 }
     .box-footer img{
