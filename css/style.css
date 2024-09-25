@@ -1,0 +1,2153 @@
+body, 
+html {	    
+    background-color: #101010;    
+    box-sizing: border-box;    
+    color: #fff;
+    font-style: normal;
+    font-weight: normal;    
+    margin: 0;   
+    padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.clear{
+    clear: both;
+}
+
+@font-face {
+    font-family: 'liquidamber-reguluploadedfile';
+    src: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/fonts/liquid-amber-regular-webfont.woff2') format('woff2'),
+         url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/fonts/liquid-amber-regular-webfont.woff') format('woff');
+}
+@font-face {
+    font-family: 'liquidamber-italiuploadedfile';
+    src: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/fonts/liquid-amber-italic-webfont.woff2') format('woff2'),
+         url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/fonts/liquid-amber-italic-webfont.woff') format('woff');
+}
+@font-face {
+    font-family: 'prelobook';
+    src: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/fonts/Prelo-Book-webfont.woff2') format('woff2'),
+         url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/fonts/Prelo-Book-webfont.woff') format('woff'),;
+}
+@font-face {
+    font-family: 'prelobold';
+    src: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/fonts/Prelo-Bold-webfont.woff2') format('woff2'),
+         url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/fonts/Prelo-Bold-webfont.woff') format('woff'),;
+
+}
+
+    #social{ 
+        cursor: pointer;  
+        margin: 0 auto;
+        position: absolute;
+        right: 20%;
+        top: 15px;
+        z-index: 50;
+    }
+        #social ul{
+            display: inline-block;
+            margin: 0 auto;
+            padding: 0;
+            vertical-align: middle;
+        }
+            #social ul li{
+                display: inline-block;
+                margin: 0 3px;
+                vertical-align: middle;
+            }
+                #social ul li a{
+                    cursor: pointer;    
+                    height: 36px;
+                    width: 36px;
+                }
+                    #fb{
+                        background: url(https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/personas-desaparecidas/img/fb-icon.png?v2) no-repeat 0 0;
+                        background-size: 100% !important;
+                        border: none;
+                        display: inline-block;
+                        height: 36px;
+                        text-indent: -9999px;
+                        width: 36px;
+                    }
+                    #wst{                
+                        background: url(https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/personas-desaparecidas/img/wsp-icon.png?v2) no-repeat 0 0 !important;
+                        background-size: 100% !important;
+                        border: none;
+                        display: none;
+                        height: 36px;
+                        text-indent: -9999px;
+                        width: 36px;
+                    }
+                    #tw{            
+                        background: url(https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/personas-desaparecidas/img/tw-icon.png?v2) no-repeat 0 0 !important;
+                        background-size: 100% !important;
+                        border: none;
+                        display: inline-block;
+                        height: 36px;
+                        text-indent: -9999px;
+                        width: 36px;
+                    }
+
+.main-drag{
+    background-color: #101010;
+    background-image: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/img/textura-negra.gif');
+    background-size: cover;
+    margin: 0 auto;
+    padding: 9vh 0;
+    position: relative;
+    z-index: 20;
+}
+    .main-drag h5{
+        color: #c2a663;
+        font: 42px / 1.2 'liquidamber-reguluploadedfile';
+        margin: 0 auto;
+        text-align: center;
+    }
+    .main-drag p{
+        font: 16px/1.2 'prelobook';
+        margin: 0 auto 50px;
+        text-align: center;
+    }   
+        .main-drag p span{
+            font-family: 'prelobold';
+        }
+    .ctn-drag{
+        padding-left: 95px;
+    }
+    .incorrecto{
+        color: red;
+        transition: background-color 0.5s ease;
+    }
+    .box-main-drag{
+        margin: 20px auto 60px;
+        max-width: 150px;
+        position: relative;
+    }
+        .grab-element {
+            background-color: #dba2eb;                 
+            /*cursor: grab;*/
+            height: 30px;
+            width: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            transition: transform 0.3s ease; 
+            -webkit-transition: transform 0.3s ease; 
+            -moz-transition: transform 0.3s ease; 
+            -o-transition: transform 0.3s ease; 
+        }
+            .grab-element::before{
+                color: #dba2eb; 
+                content: 'pies';
+                font: 28px/1.2 'liquidamber-reguluploadedfile';
+                left: -40px;
+                position: absolute;
+            }
+            .grab-element::after{
+                background: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/img/manito.webp') no-repeat;
+                background-size: 100%;
+                content: '';
+                height: 30px;
+                position: absolute;
+                right: -30px;
+                width: 20px;
+
+                animation: rotateShake .3s infinite alternate ease-in-out;
+            }
+                @keyframes rotateShake {
+                    0% {
+                        transform: rotate(4deg); 
+                    }
+                    100% {
+                        transform: rotate(-4deg); 
+                    }
+                }
+            .element-2{
+                background-color: #81a466;
+            }
+                .element-2::before{
+                    color: #81a466;
+                    content: 'dónde están';
+                    left: -105px;
+                }
+            .element-3{
+                background-color: #b61b1b;
+            }
+                .element-3::before{
+                    color: #b61b1b;
+                    content: 'las mujeres ya no';
+                    left: -160px;
+                }
+        ul.opciones{
+            margin: 0 auto;
+            padding: 0;
+            position: relative;
+            top: 32px;
+        }
+            ul.opciones li {
+                cursor: pointer;
+                padding: 10px;
+                font: 22px/1.2 'liquidamber-reguluploadedfile';
+                margin: 5px;
+                list-style: none;
+                padding: 0;
+                position: relative; /* Necesario para que el grab-element se posicione relativo a cada <li> */
+            }
+.box-main-portada{
+    /*background-color: #101010;*/
+    background-image: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/img/bg-estrellas-2.gif');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 99vh;
+    mix-blend-mode: lighten;
+    overflow: hidden;
+    position: relative;
+    z-index: 20;
+}
+    .box-ctn-portada{
+        height: 200px;
+        left: 50%;
+        position: absolute;
+        top: 48%;            
+        transform: translate(-50%, -50%);     
+                   
+    }
+        .box-ctn-portada h1{
+            color: #fff;
+            font: 220px/.8 'liquidamber-reguluploadedfile';       
+            margin: 0 auto;
+            max-width: 465px;           
+            text-align: center;            
+        }
+            .box-ctn-portada h1 span{
+                color: #D6A852;
+                display: block;
+                font-size: 35px;
+                text-align: right;
+            }
+            .box-ctn-portada .left{
+                text-align: left;
+            }
+            .frase-titulo{
+                position: absolute;
+            }
+                .frase-titulo-1{
+                    max-width: 230px;
+                    right: -200%;
+                    top: -5px;  
+                }
+                .frase-titulo-2{
+                    bottom: -115px;
+                    left: -200%;
+                    max-width: 230px;
+                }
+                .frase-titulo-3{
+                    bottom: -135px;                   
+                    max-width: 230px;
+                    right: -200%;
+                }
+
+                @keyframes rotateShakeFrase {
+                    0% {
+                        transform: rotate(4deg); 
+                    }
+                    100% {
+                        transform: rotate(-4deg); 
+                    }
+                }
+                @keyframes rotateShakeFrase2 {
+                    0% {
+                        transform: rotate(-4deg); 
+                    }
+                    100% {
+                        transform: rotate(4deg); 
+                    }
+                }
+                @keyframes rotateShakeFrase3 {
+                    0% {
+                        transform: rotate(-4deg); 
+                    }
+                    100% {
+                        transform: rotate(4deg); 
+                    }
+                }
+
+                @keyframes entrarDerecha {
+                    0% {
+                        right: -200%;  
+                        transform: rotate(4deg); 
+                    }
+                    100% {
+                        right: -100px;  
+                        transform: rotate(-4deg); 
+                    }
+                }                
+                @keyframes salirDerecha {
+                    from {
+                        right: -100px;  
+                    }
+                    to {
+                        right: -200%; 
+                    }
+                    
+                }
+
+                @keyframes entrarIzquierda {
+                    0% {
+                        left: -200%;  
+                        transform: rotate(4deg); 
+                    }
+                    100% {
+                        left: -100px;  
+                        transform: rotate(-4deg); 
+                    }
+                }                
+                @keyframes salirIzquierda {
+                    from {
+                        left: -100px;  
+                    }
+                    to {
+                        left: -200%; 
+                    }
+                    
+                }
+
+                @keyframes entrarAbajoCanciones {
+                    0% {
+                        opacity: 0;
+                        top: -200px;  
+                    }
+                    100% {
+                        opacity: 1;
+                        top: 0;  
+                    }
+                }  
+                @keyframes salirAbajoCanciones {
+                    0% {
+                        opacity: 1;
+                        top: 0;  
+                    }
+                    100% {
+                        opacity: 0;
+                        top: -200px;  
+                    }
+                } 
+
+                @keyframes entrarAbajoSencillos {
+                    0% {
+                        opacity: 0;
+                        top: -200px;  
+                    }
+                    100% {
+                        opacity: 1;
+                        top: 0;  
+                    }
+                }  
+                @keyframes salirAbajoSencillos {
+                    0% {
+                        opacity: 1;
+                        top: 0;  
+                    }
+                    100% {
+                        opacity: 0;
+                        top: -200px;  
+                    }
+                } 
+
+                @keyframes entrarAbajoHits {
+                    0% {
+                        opacity: 0;
+                        top: -200px;  
+                    }
+                    100% {
+                        opacity: 1;
+                        top: 0;  
+                    }
+                }  
+                @keyframes salirAbajoHits {
+                    0% {
+                        opacity: 1;
+                        top: 0;  
+                    }
+                    100% {
+                        opacity: 0;
+                        top: -200px;  
+                    }
+                } 
+
+                .box-main-portada .frase-titulo-1.entrar-derecha{   
+                    right: -100px;                    
+                    animation: entrarDerecha .5s ease-in-out,
+                               rotateShakeFrase .8s infinite alternate ease-in-out;
+                } 
+                .box-main-portada .frase-titulo-1.salir-derecha{                    
+                    animation: salirDerecha .5s ease-in-out;
+                } 
+
+                .box-main-portada .frase-titulo-2.entrar-izquierda{   
+                    left: -100px;                    
+                    animation: entrarIzquierda .5s ease-in-out,
+                               rotateShakeFrase .8s infinite alternate ease-in-out;
+                } 
+                .box-main-portada .frase-titulo-2.salir-izquierda{                    
+                    animation: salirIzquierda .5s ease-in-out;
+                } 
+
+                .box-main-portada .frase-titulo-3.entrar-derecha{   
+                    right: -100px;                    
+                    animation: entrarDerecha .5s ease-in-out,
+                               rotateShakeFrase .8s infinite alternate ease-in-out;
+                } 
+                .box-main-portada .frase-titulo-3.salir-derecha{                    
+                    animation: salirDerecha .5s ease-in-out;
+                } 
+
+                .box-canciones.entrar-abajo-canciones{   
+                    opacity: 1;
+                    top: 0;                    
+                    animation: entrarAbajoCanciones .5s ease-in-out;
+                } 
+                .box-canciones.salir-abajo-canciones{
+                    animation: salirAbajoCanciones .5s ease-in-out;
+                }
+
+                .box-sencillos.entrar-abajo-sencillos{   
+                    opacity: 1;
+                    top: 0;                    
+                    animation: entrarAbajoSencillos .5s ease-in-out;
+                    
+                } 
+                .box-sencillos.salir-abajo-sencillos{
+                    animation: salirAbajoSencillos .5s ease-in-out;
+                }
+
+                .box-hits-spotify.entrar-abajo-hits{   
+                    opacity: 1;
+                    top: 0;                    
+                    animation: entrarAbajoHits .5s ease-in-out;
+                    
+                } 
+                .box-hits-spotify.salir-abajo-hits{
+                    animation: salirAbajoHits .5s ease-in-out;
+                }
+
+.box-bajada{
+    background-color: #101010;
+    background-image: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/img/textura-negra.gif');
+    background-size: cover;
+    margin: 0 auto;
+    padding: 5vh 0 30vh;
+    position: relative;
+    z-index: 20;
+}
+    h2{
+        font: 23px/1.2 'liquidamber-reguluploadedfile';
+        margin: 0 auto;
+        max-width: 400px;
+        text-align: center;
+    }
+        h2 span{
+            color: #d794e9;
+        }
+.main-discos{
+    background: #101010;
+    background-image: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/img/textura-negra.gif');
+    background-size: cover;
+    position: relative;
+    z-index: 40;    
+}
+    .main-discos h4{
+        font: 42px/1 'liquidamber-reguluploadedfile';
+        margin: 0 auto 40px;
+        text-align: center;
+    }
+        .main-discos h4 span{  
+            color: #fff;    
+            font-size: 30px;    
+            padding: 5px 20px;
+        }
+            .color-verde{
+                color: #609D4F;
+            }
+            .color-verde span{
+                background: #609D4F;
+            }
+            .color-rojo{
+                color: #F81616;
+            }
+            .color-rojo span{
+                background: #F81616;
+            }
+            .color-morado{
+                color: #ED95ED;
+            }
+            .color-morado span{
+                background: #ED95ED;
+            }
+            .color-negro{
+                color: #101010;
+            }
+                .color-negro span,
+                .color-blanco span{
+                    background: #101010;
+                }
+                .color-blanco span i{
+                    display: none;
+                    width: 10px;
+                }
+            .color-blanco{
+                color: #fff;
+            }
+            
+    .box-portadas-discos{
+        margin: 0 auto;
+        padding: 10px 0 40px;
+    }
+    .box-portadas-discos ul,
+    .box-canciones ul,
+    .box-sencillos ul,
+    .box-hits-spotify ul,
+    .box-hits ul{     
+        margin: 0 auto;   
+        padding: 0;
+        text-align: center;
+    }
+        .box-portadas-discos ul li,
+        .box-hits ul li{
+            display: inline-block;
+            margin: 0 10px;
+            max-width: 60px;
+            vertical-align: top;
+        }
+            .box-portadas-discos ul li img,
+            .box-hits ul li img{
+                border-radius: 10px;
+            }
+            .box-portadas-discos ul li p{
+                display: block;
+                font: 18px/1.1 'liquidamber-reguluploadedfile';
+                margin: 0 auto;                
+               
+            }
+    .box-canciones{
+        margin: 10px auto 40px;  
+        opacity: 0;      
+        position: relative;     
+        top: -200px;  
+    }   
+        .box-canciones ul li,
+        .box-sencillos ul li,
+        .box-hits-spotify ul li{
+            display: inline-block;
+            max-width: 65px;
+            text-align: left;
+            vertical-align: top;
+        }
+            .box-canciones ul li p{
+                background-color: #F81616;
+                color: #fff;
+                font: 22px/1.1 'liquidamber-reguluploadedfile';
+                margin: 0 auto 10px;
+                max-width: 25px;
+                padding: 2px 5px;
+            }
+            .box-canciones ul li svg,
+            .box-sencillos ul li svg,
+            .box-hits-spotify ul li svg{
+                display: inline-block;
+                max-width: 15px;
+                vertical-align: top;
+            }
+    .box-sencillos{
+        margin: 10px auto 40px;
+        opacity: 0;
+        position: relative;  
+        top: -200px;      
+    }     
+        .box-sencillos ul li{
+
+        }      
+    .nota-morada{
+        background-color: #ED95ED;
+    }
+    .box-hits-spotify{
+        /*background-color: #1ED760;*/
+        background: rgb(40 190 71);
+        background: linear-gradient(180deg, rgb(40, 190, 71, 0.5) 0%, rgb(15, 63, 31, .5) 60%, rgba(7, 9, 6, .5) 100%);
+        opacity: 0;
+        padding: 40px 0;
+        position: relative;
+        top: -200px;
+    }
+        .box-hits-spotify::after,
+        .main-api-spotify::after{
+            border-style: solid;
+            border-width: 0 60px 40px 60px;
+            border-color: transparent transparent #1ED760 transparent;
+            bottom: -40px;
+            content: '';
+            height: 0px;  
+            left: 50%;   
+            margin-left: -50px;       
+            position: absolute;
+            transform: rotate(180deg);
+            width: 0px; 
+            z-index: 30;
+        }
+        .box-hits-spotify ul li{
+            
+        }
+        .opacidad{
+            opacity: .3;
+        }
+        .alto{
+            height: 100px;
+        }
+    .box-hits{
+
+    }
+        .box-hits ul li{
+            text-align: center;
+        }
+            .box-hits ul li p{
+                color: #fff;
+                font: 17px / 1.1 'liquidamber-reguluploadedfile';
+                margin: 0 auto;
+            }  
+                .nombre-album{
+                    min-height: 60px;
+                }
+            .box-hits ul li iframe{
+                transform: translate(-35%, 0);
+            }
+            .box-hits ul li img.btn-play{
+                cursor: pointer;
+                display: block;
+                margin: 0 auto;
+                max-width: 30px;
+            }
+            .box-reproducciones{
+                background-color: #fff;
+                border-radius: 5px;
+                box-sizing: border-box;
+                margin: 20px 0 10px -35px;
+                padding: 10px 5px;
+                position: relative;
+                width: 135px;                
+            }
+                .box-reproducciones::before{    
+                    border-color: transparent transparent #FFFFFF transparent;
+                    border-style: solid;
+                    border-width: 0 15px 15px 15px;
+                    content: '';     
+                    height: 0px;   
+                    left: 50%; 
+                    margin-left: -15px;                    
+                    transform: rotate(0deg);       
+                    position: absolute; 
+                    top: -15px; 
+                    width: 0px;          
+                }
+            
+                .box-hits .box-reproducciones p{
+                    color: #1ED760;
+                    font: 20px/1 'prelobold';
+                }
+                    .box-hits .box-reproducciones p span{
+                        color: #000;
+                        font-size: 13px;
+                    }
+        .texto-hits{
+            margin: 40px auto;
+            max-width: 400px;
+        }
+            .texto-hits h3,
+            .texto-hits p{
+                color: #000;
+                margin: 0 auto;
+            }
+            .texto-hits h3{
+                color: #fff;
+                font: 26px/1.1 'liquidamber-reguluploadedfile';    
+                margin-bottom: 5px;            
+            }
+            .texto-hits p{
+                color: #fff;
+                font: 17px/1.5 'prelobook';
+            }
+                .texto-hits p span{
+                    font-family: 'prelobold';
+                }
+.main-api-spotify{
+    /*background-color: #000;*/
+    background-image: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/img/textura-negra.gif');
+    background-size: contain;
+    padding-top: 70px;
+    position: relative;
+    z-index: 30;
+}   
+    .main-api-spotify h3{
+        color: #1ED760;
+        font: 48px/1.1 'liquidamber-reguluploadedfile';    
+        margin: 0 auto 20px;
+        max-width: 500px;
+        text-align: center;
+    }
+    .main-api-spotify h4{
+        color: #fff;
+        font: 28px/1.1 'liquidamber-reguluploadedfile';    
+        margin: 0 auto 20px;
+        max-width: 500px;
+        text-align: center;
+    }
+    .main-api-spotify p{
+        color: #fff;
+        font: 15px/1.6 'prelobook';
+        margin: 0 auto;
+        max-width: 385px;
+    }
+        p.aviso-verde{
+            background-color: #1ED760;
+            border-radius: 25px;
+            box-sizing: border-box;
+            color: #000;
+            margin: 80px auto 20px;
+            padding: 20px !important;
+        }
+        .main-api-spotify p span{
+            font-family: 'prelobold';
+        }
+        .leyenda-clusters{
+            margin: 60px auto 15px;
+            max-width: 680px;
+            text-align: right;
+        }
+            .box-leyenda-triangulo{
+                display: inline-block;
+                float: left;
+                vertical-align: top;
+            }
+                .triangulo{
+                    border-color: transparent transparent #FFFFFF transparent;
+                    border-style: solid;
+                    border-width: 0 15px 15px 15px;        
+                    display: inline-block;        
+                    height: 0px;    
+                    margin-top: 5px;            
+                    transform: rotate(0deg);
+                    vertical-align: top;
+                    width: 0px;
+                }
+                .box-leyenda-triangulo p{
+                    display: inline-block;
+                    font-size: 16px !important;
+                    font-family: 'prelobold' !important;
+                    vertical-align: bottom !important;
+                }
+            .leyenda-clusters p{
+                display: inline-block;
+                font: 18px / 1.1 'liquidamber-reguluploadedfile';
+                margin: 0 5px;
+                vertical-align: top;
+            }
+            ul.corazones{
+                margin: 0 auto 40px;
+                max-width: 800px;
+                padding: 0;
+                text-align: center;
+            }
+                ul.corazones li{
+                    display: inline-block;
+                    margin: 10px 20px;
+                    max-width: 100px;
+                    vertical-align: top;
+                }
+                    ul.corazones li img{
+                        margin-bottom: 15px;
+                        opacity: .8;
+                    }
+                    ul.corazones li p{
+                        font: 17px/1.1 'liquidamber-reguluploadedfile'; 
+                    }
+            .box-resumen-corazones{
+                margin: 70px auto 80px;
+                max-width: 650px;
+                text-align: center;
+            }
+                .box-resumen-corazones p{
+                    display: inline-block;
+                    max-width: 260px;
+                    text-align: left;
+                    vertical-align: top;
+                }
+                .box-album-corazon{
+                    display: inline-block;
+                    margin: 0 30px;
+                    vertical-align: top;
+                }
+                    .box-album-corazon img{
+                        margin-top: 10px;
+                        max-width: 130px;
+                        opacity: .8;
+                    }
+                    .box-album-corazon .box-leyenda-triangulo{
+                        margin-left: 15px;
+                    }
+                p.texto-album-corazon{
+                    font-family: 'prelobold';
+                    line-height: 1.3;
+                    margin: 20px 20px 0;
+                    max-width: 130px;
+                }
+        .box-iframe{
+            margin: 40px auto 80px;
+            max-width: 900px;
+        }
+            .box-iframe h6{
+                font: 26px/1.1 'liquidamber-reguluploadedfile';   
+                margin: 0 auto;
+                text-align: center;
+            }
+            .box-indicacion{
+                margin: 10px auto;
+                text-align: center;
+            }
+                .box-indicacion img{
+                    display: inline-block;
+                    margin: 0 auto;
+                    max-width: 15px;
+                    vertical-align: top;
+                }
+                .box-indicacion p{
+                    display: inline-block;
+                    font: 13px / 1.3 'prelobook' !important; 
+                    margin: 0 auto;
+                    max-width: 180px;                    
+                    padding-left: 5px;
+                    text-align: left;
+                    text-transform: uppercase;
+                    vertical-align: top;
+                }
+                .indicacion-movil{
+                    display: none;
+                }
+                    .indicacion-movil img{
+                        max-width: 30px;
+                    }
+            .box-leyenda-iframe{
+                text-align: center;
+            }
+                .box-leyenda-iframe ul{
+                    margin: 20px auto 0;
+                    padding: 0;
+                }
+                    .box-leyenda-iframe ul li{
+                        display: inline-block;
+                        font: 14px/1.3 'prelobook'; 
+                        margin: 0 10px;
+                        text-transform: uppercase;
+                        vertical-align: top;
+                    }
+                        .box-leyenda-iframe ul li span{
+                            display: inline-block;
+                            height: 15px;
+                            margin: 2px;
+                            vertical-align: top;
+                            width: 15px;
+                        }
+                            .box-leyenda-iframe ul li span.rojo{
+                                background-color: #d51c1d;
+                            }
+                            .box-leyenda-iframe ul li span.verde{
+                                background-color: #2a33de;
+                            }
+
+    .box-cuadro-variables{
+        margin: 40px auto;
+    }   
+        .box-leyenda-tabla{
+            text-align: center;
+        } 
+            .box-leyenda-tabla p{
+                display: inline-block;
+                font: 14px/1.2 'prelobold';
+                margin-top: 40px;
+                vertical-align: top;
+            }  
+            .box-leyenda-tabla ul{
+                display: inline-block;
+                padding: 0 10px;
+                text-align: center;
+                vertical-align: top;
+            }  
+                .box-leyenda-tabla ul li{
+                    display: inline-block;
+                    max-width: 50px;
+                    vertical-align: bottom;
+                }
+                    .box-leyenda-tabla ul li img{
+                        display: block;
+                        margin: 0 auto 10px;
+                    }
+                    .box-leyenda-tabla ul li p{
+                        margin: 0 auto;
+                    }
+        .box-cuadro-variables table {
+            border-collapse: collapse;
+            margin: 0 auto;
+            max-width: 600px;
+            width: 100%;
+            
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: none;
+        }
+        th {
+            
+        }
+            .table-wrapper table th p{
+                font: 18px/1.1 'liquidamber-reguluploadedfile';    
+                text-align: center;
+            }
+            td.fixed-column p{
+                font: 18px/1.1 'liquidamber-reguluploadedfile'; 
+                max-width: 80px;
+            }
+                .titulo-verde{
+                    color: #00d856 !important;
+                }
+                .titulo-morado{
+                    color: #d794ea !important;
+                }
+                .titulo-amarillo{
+                    color: #d9cc5b !important;
+                }
+                .titulo-celeste{
+                    color: #69a6bf !important;
+                }
+                
+        .table-wrapper {
+            overflow-x: auto;
+        }
+            .table-wrapper td img{
+                display: block;
+                margin: 0 auto;
+            }
+            .table-wrapper td.btn-play-blanco img{
+                cursor: pointer;
+                max-width: 40%;
+            } 
+            iframe.iframe-cancion-api{
+                display: none;
+                margin-left: -70px;
+                margin-top: 20px;                
+                position: absolute;
+            }
+        @media (max-width: 768px) {
+            th.fixed-column , td.fixed-column  {    
+                background: #0f0f0f;            
+                left: 0;  
+                position: sticky;              
+                z-index: 1; 
+            }
+        }
+    .box-cifra-youtube{
+        margin-top: 140px;
+        padding-bottom: 50px;
+    }   
+        .box-cifra-youtube h5{
+            color: #F81616;
+            font: 150px/0.9 'liquidamber-reguluploadedfile'; 
+            margin: 0 auto; 
+            text-align: center;
+        } 
+        .box-cifra-youtube p{
+            color: #fff;
+            font: 38px/1.1 'liquidamber-reguluploadedfile'; 
+            max-width: 100%;
+            text-align: center;
+        }
+            .box-cifra-youtube p span{
+                color: #F81616;
+                font-family: 'liquidamber-reguluploadedfile'; 
+            }
+    .main-api-spotify::after{
+        border-color: transparent transparent #101010 transparent;
+    }
+.box-mundo{
+    background-color: #F81616;
+    opacity: 0;
+    padding: 80px 0 50px;
+    position: relative;
+    z-index: 20;
+}
+    .box-mundo h4{
+        color: #fff;
+        font: 32px/1.2 'liquidamber-reguluploadedfile'; 
+        margin: 0 auto;
+        max-width: 350px;
+        text-align: center;
+    }
+    .box-mundo h4.ancho{
+        font-size: 50px;
+        max-width: 650px;   
+    }
+    .box-mundo img.mapa{
+        display: block;
+        margin: 30px auto;
+        max-width: 650px;
+    }
+    .box-mundo ul{
+        padding: 0;
+        text-align: center;
+    }
+        .box-mundo ul li{
+            display: inline-block;
+            list-style: none;
+            margin: 10px 15px;
+            max-width: 150px;
+            vertical-align: top;           
+        }
+            .box-mundo ul li:nth-child(1){
+                animation: rotateShakeVideo-1 .2s infinite alternate ease-in-out;
+            }
+            .box-mundo ul li:nth-child(2){
+                animation: rotateShakeVideo-2 .2s infinite alternate ease-in-out;
+            }
+            .box-mundo ul li:nth-child(3){
+                animation: rotateShakeVideo-1 .2s infinite alternate ease-in-out;
+            }
+                @keyframes rotateShakeVideo-1 {
+                    0% {
+                        transform: rotate(4deg); 
+                    }
+                    100% {
+                        transform: rotate(-4deg); 
+                    }
+                }
+                @keyframes rotateShakeVideo-2 {
+                    0% {
+                        transform: rotate(-6deg); 
+                    }
+                    100% {
+                        transform: rotate(6deg); 
+                    }
+                }
+            .entrar-opacidad-mundo{
+                opacity: 1;
+                transition: .3s all ease-in-out;
+            }
+            .salir-opacidad-mundo{
+                opacity: 0;
+                transition: .3s all ease-in-out;
+            }
+.box-separador{
+    background-color: #101010;
+    background-image: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/img/textura-negra.gif');
+    background-size: cover;
+    padding: 50px 0;
+    position: relative;
+    z-index: 20;
+}
+    .box-separador p{
+        color: #fff;
+        font: 26px/1.2 'liquidamber-reguluploadedfile';
+        margin: 20px auto;
+        max-width: 400px;
+        text-align: center;
+    }
+.box-billboard{
+    background-color: #9A70FA;    
+    position: relative;
+    text-align: center;
+    z-index: 30;
+}  
+    .box-info-billboard{
+        display: inline-block;
+        max-width: 400px;
+        padding: 50px 0 30px;
+        position: relative;
+        text-align: left;
+        vertical-align: top;
+    }
+        .box-info-billboard h4{
+            color: #000000;
+            font: 42px/1.1 'liquidamber-reguluploadedfile';
+            margin: 0 auto;
+        }
+        .box-info-billboard p,
+        .box-karaoke p{
+            font: 15px/1.5 'prelobook';
+        }
+            .box-info-billboard p span,
+            .box-karaoke p span{
+                font-family: 'prelobold';
+            }
+        .box-morado{
+            bottom: 27px;
+            position: absolute;
+            width: 100%;
+            height: 20px;
+            background: #9a6ffa;
+            z-index: 20;
+        }
+            .box-morado p{
+                font-size: 10px;
+                text-align: right;
+            }
+    .box-billboard ul{
+        cursor: grab;
+        display: inline-block;
+        margin: 0 10px;
+        max-height: 860px;
+        max-width: 200px;
+        overflow-y: scroll;
+        padding: 0;        
+        vertical-align: top;
+    }
+        .box-billboard ul li{
+            display: inline-block;
+            margin-bottom: 15px;
+            vertical-align: top;
+        }
+            .box-billboard ul li img{
+                pointer-events: none;
+            }
+            /* Scroll personalizado para WebKit (Chrome, Safari) */
+            .box-billboard ul::-webkit-scrollbar {
+                width: 8px; /* Ancho del scrollbar */
+            }
+            .box-billboard ul::-webkit-scrollbar-track {
+                background: transparent; /* Color de la pista del scroll */
+                border-radius: 10px;
+            }
+            .box-billboard ul::-webkit-scrollbar-thumb {
+                background-color: #9A70FA; /* Color del thumb (la parte que se mueve) */
+                border-radius: 10px;
+                border: 2px solid #9A70FA; /* Espaciado entre el thumb y la pista */
+            }
+            .box-billboard ul::-webkit-scrollbar-thumb:hover {
+                background-color: #9A70FA; /* Color al pasar el ratón por encima */
+            }
+            .scrollable {
+                user-select: none;
+                -webkit-user-select: none; /* Safari */
+                -moz-user-select: none;    /* Firefox */
+                -ms-user-select: none;     /* Internet Explorer/Edge */
+                user-select: none;         /* Estándar */
+            }
+            .box-lista-movil{
+                display: none;
+                overflow-x: scroll;
+                width: 100%;                
+            }
+                .box-billboard ul.lista-movil{
+                    max-height: inherit;
+                    max-width: inherit;
+                    overflow-y: hidden;
+                    width: 1220px;
+                }
+                    .box-billboard ul.lista-movil li{
+                        margin: 10px 20px;
+                    }
+                    .box-billboard ul.lista-movil li img{
+                        max-width: 200px;
+                        pointer-events: none;
+                    }
+.box-karaoke{
+    background: #101010;
+    background-image: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/img/textura-negra.gif');
+    background-size: cover;
+    padding: 50px 0;
+    position: relative;
+    z-index: 30;
+}
+    .box-karaoke h4{
+        color: #fff;
+        font: 42px/1.2 'liquidamber-reguluploadedfile';
+        margin: 10px auto;
+        text-align: center;
+    }
+    .box-karaoke p{
+        margin: 0 auto 20px;
+        max-width: 400px;
+    }
+    .box-ctn-karaoke{
+        margin: 50px auto 0;
+        max-width: 600px;
+    }
+        .box-medidor{
+            border-left: 1px solid #fff;
+            display: inline-block;
+            padding-left: 30px;
+            vertical-align: top;
+            width: 150px;
+        }
+            .box-medidor ul{
+                list-style-type: none;
+                margin: 0 auto;
+                padding: 0;
+            }
+                .box-medidor ul li{
+                    cursor: pointer;
+                    height: 100px;
+                    position: relative;
+                    width: 12px;
+                }
+                    .box-medidor ul li:hover{
+                        opacity: 1;
+                    }
+                    .box-medidor .active {
+                        opacity: 1;
+                    }
+                    .box-medidor ul li:nth-child(1){
+                        background-color: #943e6d;
+                    }
+                    .box-medidor ul li:nth-child(2){
+                        background-color: #c81f1f;
+                    }
+                    .box-medidor ul li:nth-child(3){
+                        background-color: #1ea544;
+                    }
+                    .box-medidor ul li:nth-child(4){
+                        background-color: #d9cc5c;
+                    }
+                    .box-medidor ul li:nth-child(5){
+                        background-color: #e98e25;
+                    }
+                    .box-medidor ul li:nth-child(6){
+                        background-color: #1e1cbc;
+                    }
+                    .box-medidor ul li p{
+                        font: 14px / 1.2 'prelobold';
+                        left: 30px;    
+                        position: absolute;
+                        text-transform: uppercase;
+                        top: 50%;                              
+                    }
+                        .box-medidor ul li p::before{
+                            background: #fff;
+                            content: '';
+                            height: 1px;
+                            left: -35px;
+                            position: absolute;
+                            top: 40%;                            
+                            width: 30px;
+                        }
+        .box-cancion{
+            background-color: #1C1C1C;
+            border-radius: 20px;
+            box-sizing: border-box;
+            display: inline-block;
+            margin-top: 50px;
+            max-width: 350px;
+            padding: 0 20px 30px;
+            position: relative;
+            vertical-align: top;
+        }
+            .box-cancion img{
+                border-radius: 20px;
+                display: block;
+                margin: -50px auto 0;
+                max-width: 150px; 
+            }
+                .title {
+                    text-align: center;
+                    font: 17px/1.4 'prelobold';     
+                    color: white;
+                    background: black;
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                }                
+                .plain,
+                .plain2,
+                .plain3,
+                .plain4,
+                .plain5,
+                .plain6 {
+                    color: white;
+                    font: 18px/1.4 'prelobook';                    
+                    margin-bottom: 5px;
+                }                
+                .highlight,
+                .highlight2,
+                .highlight3,
+                .highlight4,
+                .highlight5,
+                .highlight6 {
+                    color: #9A70FA;
+                    font: 18px/1.4 'prelobook';   
+                    margin-bottom: 5px;
+                }                
+                .background {
+                    height: 300px;
+                    overflow-x: hidden;
+                    overflow-y: scroll;                    
+                    padding-top: 20px;                   
+                }      
+                    /* Scroll personalizado para WebKit (Chrome, Safari) */
+                    .background::-webkit-scrollbar {
+                        width: 8px; /* Ancho del scrollbar */
+                    }
+                    .background::-webkit-scrollbar-track {
+                        background: #0d0d0d; /* Color de la pista del scroll */
+                        border-radius: 10px;
+                    }
+                    .background::-webkit-scrollbar-thumb {
+                        background-color: #fff; /* Color del thumb (la parte que se mueve) */
+                        border-radius: 10px;
+                        border: 1px solid #fff; /* Espaciado entre el thumb y la pista */
+                    }
+                    .background::-webkit-scrollbar-thumb:hover {
+                        background-color: #fff; /* Color al pasar el ratón por encima */
+                    }   
+                    .background h6{
+                        font: 19px/1.4 'prelobold';   
+                        margin: 0 auto;
+                    }       
+                .player {
+                    margin: 0 auto 20px;
+                    width: 100%; 
+                }   
+                    #player{
+                        width: 95%;
+                    }             
+                .note {
+                    background-color: darkgray;
+                }
+    p.pase{
+        margin: 20px auto;
+        text-align: center;
+    }
+.main-sentimientos{
+    background-image: url(https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/img/textura-negra.gif);
+    background-size: 100%;
+}
+
+.box-selector{
+    background-color: #101010;
+    padding: 20px 0;
+    position: sticky;
+    position: -webkit-sticky; 
+
+    top: 0;
+    z-index: 20;
+}
+    .entrar-fixed{
+        position: fixed;
+        width: 99%;
+    }
+    .salir-fixed{
+        position: sticky;
+    }
+    form#selector{
+        margin: 0 auto;
+        max-width: 600px;
+    }
+        form#selector label{
+            display: block;
+            font: 17px/1.2 'prelobold';
+            text-align: center;
+        }
+        form#selector input{
+            width: 100%;
+        }
+        #sentimientos {
+            background: linear-gradient(to right, #ffcc00 0%, #ffcc00 14.28%, #ff9900 14.28%, #ff9900 28.56%, #ff6600 28.56%, #ff6600 42.84%, #ff3300 42.84%, #ff3300 57.12%, #ff0000 57.12%, #ff0000 71.4%, #cc0000 71.4%, #cc0000 85.68%, #990000 85.68%, #990000 100%);
+            border-radius: 5px;
+            height: 10px;
+            width: 100%; 
+            
+            outline: none;
+            transition: background 0.3s;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        #sentimientos::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 8px;
+            cursor: pointer;
+        }
+        #sentimientos::-webkit-slider-thumb {
+            height: 20px;
+            width: 20px;
+            background: #fff;
+            border: 2px solid #333;
+            border-radius: 50%;
+            cursor: pointer;
+            position: relative;
+            -webkit-appearance: none;
+            margin-top: -6px;
+        }
+        #sentimientos::-moz-range-track {
+            width: 100%;
+            height: 8px;
+            cursor: pointer;
+        }
+        #sentimientos::-moz-range-thumb {
+            height: 20px;
+            width: 20px;
+            background: #fff;
+            border: 2px solid #333;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        #tooltip h5 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
+        }    
+        #tooltip p {
+            margin: 5px 0 0;
+            font-size: 14px;
+        }
+.box-main-sentimientos{
+    position: relative;
+    margin: 90px auto 0;
+    max-width: 800px;
+}
+    .ctn-box-main-sentimientos{
+        margin: 0 auto;
+        position: relative;
+        width: 600px;
+    }
+    .box-disco-sentimientos{
+
+    }
+        .box-disco-sentimientos img{
+            display: inline-block;
+            max-width: 50px;
+            vertical-align: top;
+        }
+        .box-disco-sentimientos h6{
+            display: inline-block;
+            font: 21px/1.2 'liquidamber-reguluploadedfile';
+            margin: 0 auto;
+            text-transform: uppercase;
+            vertical-align: bottom;
+        }
+        .box-disco-sentimientos ul{
+            border-bottom: 1px dashed #fff;
+            display: block;
+            padding: 0;
+            padding-bottom: 5px;            
+        }
+            .box-disco-sentimientos ul li{
+                display: inline-block;
+                margin: 0 5px 20px;
+                max-width: 135px;
+                vertical-align: top;
+            }
+                .box-disco-sentimientos ul li:nth-child(1){
+                    margin-left: 0;
+                }
+                .tooltip {
+                    background-color: #101010;
+                    border-radius: 5px;
+                    color: #fff;
+                    display: none;
+                    margin-top: 10px;
+                    max-width: 120px;
+                    padding: 5px;
+                    position: absolute; 
+                    text-align: center; 
+                    z-index: 10;
+                }              
+                .linea{
+                    display: inline-block;
+                    height: 45px;
+                    margin-left: -1px;
+                    opacity: 1;
+                    position: relative;
+                    vertical-align: top;
+                    width: 5px;                    
+                }   
+                    .linea.inactive {
+                        opacity: 0.2;
+                    }
+                    .linea-tooltip {
+                        background-color: #161616;
+                        border-radius: 5px;
+                        bottom: 125%;
+                        color: #fff;
+                        font: 15px/1.3 'prelobook';
+                        left: 50%;
+                        margin-left: -80px;
+                        opacity: 0;
+                        padding: 5px 0;
+                        position: absolute;
+                        text-align: center;
+                        visibility: hidden;
+                        width: 160px;                         
+                        z-index: 1; 
+
+                        transition: opacity 0.5s;
+                    }
+                        .linea-tooltip b{
+                            display: block;
+                            margin-bottom: 2px;
+                        }
+                    .linea:hover .linea-tooltip {
+                        opacity: 1;
+                        visibility: visible;                        
+                    }
+                    .alegria{
+                        background-color: #d9cc5c;
+                    }
+                    .disgusto{
+                        background-color: #1ea544;
+                    }
+                    .enojo{
+                        background-color: #c81f1f;
+                    }
+                    .miedo{
+                        background-color: #943e6d;
+                    }
+                    .sorpresa{
+                        background-color: #e98e25;
+                    }
+                    .tristeza{
+                        background-color: #1e1cbc;
+                    }
+                    .ancho-0{ width: 3px;}
+                    .ancho-1{ width: 1px;}.ancho-2{ width: 2px;}.ancho-3{ width: 3px;}.ancho-4{ width: 4px;}.ancho-5{ width: 5px;}.ancho-6{ width: 6px;}.ancho-7{ width: 7px;}.ancho-8{ width: 8px;}.ancho-9{ width: 9px;}.ancho-10{ width: 10px;}
+                    .ancho-11{ width: 11px;}.ancho-12{ width: 12px;}.ancho-13{ width: 13px;}.ancho-14{ width: 14px;}.ancho-15{ width: 15px;}.ancho-16{ width: 16px;}.ancho-17{ width: 17px;}.ancho-18{ width: 18px;}.ancho-19{ width: 19px;}.ancho-20{ width: 20px;}
+                    .ancho-21{ width: 21px;}.ancho-22{ width: 22px;}.ancho-23{ width: 23px;}.ancho-24{ width: 24px;}.ancho-25{ width: 25px;}.ancho-26{ width: 26px;}.ancho-27{ width: 27px;}.ancho-28{ width: 28px;}.ancho-29{ width: 29px;}.ancho-30{ width: 30px;}
+                    .ancho-31{ width: 31px;}.ancho-32{ width: 32px;}.ancho-33{ width: 33px;}.ancho-34{ width: 34px;}.ancho-35{ width: 35px;}.ancho-36{ width: 36px;}.ancho-37{ width: 37px;}.ancho-38{ width: 38px;}.ancho-39{ width: 39px;}.ancho-40{ width: 40px;}
+                    .ancho-41{ width: 41px;}.ancho-42{ width: 42px;}.ancho-43{ width: 43px;}.ancho-44{ width: 44px;}.ancho-45{ width: 45px;}.ancho-46{ width: 46px;}.ancho-47{ width: 47px;}.ancho-48{ width: 48px;}.ancho-49{ width: 49px;}.ancho-50{ width: 50px;}
+                    .ancho-51{ width: 51px;}.ancho-52{ width: 52px;}.ancho-53{ width: 53px;}.ancho-54{ width: 54px;}.ancho-55{ width: 55px;}.ancho-56{ width: 56px;}.ancho-57{ width: 57px;}.ancho-58{ width: 58px;}.ancho-59{ width: 59px;}.ancho-60{ width: 60px;}
+                    .ancho-61{ width: 61px;}.ancho-62{ width: 62px;}.ancho-63{ width: 63px;}.ancho-64{ width: 64px;}.ancho-65{ width: 65px;}.ancho-66{ width: 66px;}.ancho-67{ width: 67px;}.ancho-68{ width: 68px;}.ancho-69{ width: 69px;}.ancho-70{ width: 70px;}
+                    .ancho-71{ width: 71px;}.ancho-72{ width: 72px;}.ancho-73{ width: 73px;}.ancho-74{ width: 74px;}.ancho-75{ width: 75px;}.ancho-76{ width: 76px;}.ancho-77{ width: 77px;}.ancho-78{ width: 78px;}.ancho-79{ width: 79px;}.ancho-80{ width: 80px;}
+                    .ancho-81{ width: 81px;}.ancho-82{ width: 82px;}.ancho-83{ width: 83px;}.ancho-84{ width: 84px;}.ancho-85{ width: 85px;}.ancho-86{ width: 86px;}.ancho-87{ width: 87px;}.ancho-88{ width: 88px;}.ancho-89{ width: 89px;}.ancho-90{ width: 90px;}
+                    .ancho-91{ width: 91px;}.ancho-92{ width: 92px;}.ancho-93{ width: 93px;}.ancho-94{ width: 94px;}.ancho-95{ width: 95px;}.ancho-96{ width: 96px;}.ancho-97{ width: 97px;}.ancho-98{ width: 98px;}.ancho-99{ width: 99px;}.ancho-100{ width: 100px;}
+      
+    .box-resumen-sentimiento{
+        background: #fff;
+        color: #000;
+        display: none;
+        max-width: 115px;
+        padding: 10px;
+        position: fixed;
+        right: 5%;
+        top: 25%;
+    }
+        .box-resumen-sentimiento h5 {
+            font: 17px/1.3 'prelobold';
+            font-size: 18px;
+            margin: 0;
+        }
+        .box-resumen-sentimiento p {
+            font: 16px/1.2 'prelobook';
+            margin: 5px 0;
+        }
+#startScreen{   
+    background-color: #101010;
+    background-image: url(https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/img/textura-negra.gif);
+    background-size: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 30;
+}
+    .box-titular{
+        margin: 0 auto;
+        left: 50%;
+        max-width: 600px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;        
+        z-index: 10;   
+    }
+        span.separador{
+            background-color: #F3D264;
+            display: block;
+            height: 1px;
+            margin: 5px auto;
+            width: 180px;
+        }
+        .box-titular h5{
+            color: #fff;
+            font: 52px/1.1 'liquidamber-reguluploadedfile';
+            margin: 20px auto;
+            max-width: 300px;
+        }
+        .box-titular p{
+            color: #fff;
+            font: 18px/1.5 'prelobook';   
+            margin: 20px auto;
+            max-width: 370px;            
+        }
+            .box-titular p span{
+                color: #9A70FA;
+                font-family: 'prelobold';
+            }
+    #startScreen button{
+        background-color: #9A70FA;
+        border: none;
+        border-radius: 25px;
+        color: #101010;
+        cursor: pointer;
+        font: 18px / 1.3 "Montserrat", sans-serif;
+        font-weight: 800;
+        padding: 10px 20px;
+    }
+.box-main-trivia{   
+    background: #101010;   
+    display: none;
+    height: 100vh; 
+    position: relative;
+    z-index: 30;
+}
+    .box-main-trivia .logo-saltar-intro-interior{
+        display: block;
+        left: 40px;
+        margin: 10px auto;
+        max-width: 180px;
+        position: absolute;
+        top: 20px;        
+    }
+    #quizForm{
+        margin: 0 auto;       
+        width: 100%;
+    }
+    .info-trivia{
+        display: inline-block;
+        vertical-align: top;
+    }
+    .box-preguntas{
+        box-sizing: border-box;
+        cursor: pointer;
+        display: inline-block;
+        margin: 0 20px;
+        max-width: 400px;
+        text-align: left;
+        vertical-align: top;
+        width: 400px;
+    }
+        .box-contador{
+            margin: 0 auto;
+            max-width: 400px;
+            text-align: left;            
+        }
+            span.contador{
+                background-color: #9A70FA;
+                color: #fff;
+                display: inline-block;
+                font: 30px / 1.3 'liquidamber-reguluploadedfile';
+                padding: 0 10px;
+            }
+        .box-main-trivia .question{
+            margin: 0 auto;        
+            padding-top: 65px;    
+            text-align: center;
+            width: 750px;
+        }
+            .box-main-trivia .question p{
+                color: #fff;
+                font: 28px / 1.3 'liquidamber-reguluploadedfile';
+                margin: 10px auto;
+                max-width: 400px;
+                text-align: left;
+            }
+                .box-main-trivia .question p.small{
+                    font-size: 18px;
+                    line-height: 1.3;
+                }
+                .box-main-trivia .question p span.celeste{
+                    color: #65ABF3;
+                    display: block;
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+                .box-main-trivia .question p span.regular{
+                    display: block;
+                    font-weight: 400;
+                }
+            .box-main-trivia .question label{
+                border: 1px solid #9A70FA;
+                border-radius: 20px;
+                color: #fff;
+                display: block;
+                font: 21px / 1.6 'liquidamber-reguluploadedfile';
+                margin-bottom: 10px; 
+                padding: 10px;
+            }
+                .box-main-trivia .question label span{
+                    background-color: #9A70FA;
+                    border-radius: 32px;
+                    color: #101010;
+                    padding: 0 12px;
+                    text-transform: uppercase; 
+                }
+                .box-main-trivia .question label p{
+                    display: inline-block;
+                    font-size: 22px;
+                    max-width: 80%;
+                    vertical-align: top;
+                }
+                input[type=radio]{
+                    accent-color: #F3D264;
+                    opacity: 0;
+                    width: 0px;
+                }
+                .box-main-trivia .question label.active-label{
+                    border: 1px solid #F3D264;
+                    color: #F3D264;
+                }
+                    .box-main-trivia .question label.active-label span{
+                        background-color: #F3D264;
+                    }
+        .box-botones{
+            margin: 30px auto 0;
+            text-align: center;
+        }
+            button.siguiente{
+                background-color: #fff;
+                border: none;
+                border-radius: 25px;
+                color: #101010; 
+                cursor: pointer;          
+                display: inline-block;
+                font: 24px/1.3 'liquidamber-reguluploadedfile';
+                margin: 10px auto;
+                padding: 10px 30px;            
+            }
+                button.siguiente:disabled{
+                    background-color: #c2c2c2;
+                    cursor: not-allowed;
+                    pointer-events: none;
+                    opacity: .3;
+                }
+            button.previo{
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                display: inline-block;
+                vertical-align: top;
+            }
+                button.previo img{
+                    margin: 13px auto;
+                    max-width: 50px;                    
+                }
+                
+.box-main-result{   
+    background: #101010; 
+    display: none;
+    height: 100vh;
+    position: relative;
+    z-index: 30;
+}
+    .box-main-result .logo-saltar-intro-interior{
+        display: block;
+        left: 40px;
+        margin: 10px auto;
+        max-width: 180px;
+        position: absolute;
+        top: 20px;        
+    }
+    #result{        
+        padding-top: 85px;
+        position: relative;
+        z-index: 10;
+        display: none;
+    }
+        .box-ctn-resultado{
+            margin: 0 auto;
+            max-width: 600px;
+            text-align: center;
+            width: 650px;
+        }
+            img.btn-pulgar{
+                display: block;
+                margin: 10px auto;
+                max-width: 70px;
+            }
+            .box-ctn-resultado h5{
+                color: #fff;
+                font: 24px / 1.3 "Montserrat", sans-serif;
+                font-weight: 800;
+                text-align: center;
+                margin: 0 auto 10px;
+            }
+            .box-ctn-resultado h4{
+                color: #fff;
+                display: inline-block;
+                font: 28px / 1.3 'liquidamber-reguluploadedfile';
+                padding: 0 10px;
+                text-align: center;
+                margin: 10px auto;
+            }
+                .titulo-rojo-trivia{
+                    background-color: #F81616;
+                }
+                .titulo-verde-trivia{
+                    background-color: #609D4F;
+                }
+                .titulo-morado-trivia{
+                    background-color: #9A70FA;
+                }
+                .titulo-azul-trivia{
+                    background-color: #202FE3;
+                }
+            .box-ctn-resultado img{
+                display: block;
+                margin: 0 auto;
+                max-width: 300px;
+            }
+            .box-ctn-resultado p{
+                color: #fff;
+                font: 17px/1.6 'prelobook';
+                font-weight: 400;
+                margin: 0 auto;
+                max-width: 450px;                
+                text-align: center;
+            }
+                .box-ctn-resultado p span{
+                   font-family: 'prelobold';
+                }
+            .box-ctn-resultado a{
+                background-color: #fff;
+                border-radius: 25px;
+                color: #101010;
+                display: block;
+                font: 24px / 1.5 'liquidamber-reguluploadedfile';
+                margin: 30px auto 0;
+                max-width: 160px;
+                text-align: center;
+                text-decoration: none;
+                padding: 5px;
+            }
+.question {
+    display: none;
+}
+.question.active {
+    display: block;
+}
+#startScreen {
+    display: block;
+    text-align: center;
+}
+.question img{
+    display: inline-block;
+    margin: 150px auto 0;
+    max-width: 190px;
+}
+    img.guitarra{
+        max-width: 280px;
+    }
+.footer-resultado{
+    height: 0;
+    opacity: 0;
+}
+.box-metodologia{
+    background-color: #101010;
+    background-image: url(https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/img/textura-negra.gif);
+    background-size: 100%;
+    padding: 80px 0;
+    position: relative;
+    z-index: 30;
+}
+    .ctn-metodologia{
+        border: 1px solid#707070;
+        box-sizing: border-box;
+        margin: 0 auto;
+        max-width: 400px;
+        padding: 25px 30px;
+    }
+        .ctn-metodologia h6{
+            color: #D6A852;
+            font: 17px/1.2 'prelobold';
+            margin: 0 auto;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .ctn-metodologia p{
+            font: 16px / 1.6 'prelobook';
+        }
+.box-footer{
+    /*background-color: #101010;*/
+    /*background-image: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/img/bg-footer.jpg');*/
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 60vh;
+    padding: 150px 0 20px;
+    position: relative;
+    text-align: center;
+    z-index: 40;
+    background-image: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/img/bg-estrellas-2.gif');
+    mix-blend-mode: lighten;    
+}
+    .box-footer img{
+        display: block;
+        margin: 0 auto 50px;
+        max-width: 140px;
+    }
+    .box-footer ul{
+        display: inline-block;
+        list-style: none;
+        max-width: 135px;
+        padding: 0;
+        vertical-align: top;
+    }
+        .box-footer ul li{
+            margin-bottom: 20px;            
+        }
+            .box-footer ul li p{
+                font: 16px / 1.6 'prelobook';
+                margin: 0 auto;
+            }
+            .box-footer ul li h5{
+                font: 16px / 1.6 'prelobold';
+                margin: 0 auto;
+            }
+    span.separador-footer{
+        background-color: #707070;
+        display: inline-block;
+        height: 235px;
+        margin: 0 40px;
+        vertical-align: top;
+        width: 1px;
+    }
+
+@media only screen and (max-width: 640px) {
+    body, html{
+        height: 100%;
+        overflow-x: hidden;
+    }
+    #wst{
+        display: inline-block;
+    }
+    body .main-drag{
+        background-color: transparent;
+        transform: translate(16%, 0);
+    }
+    .main-drag h5,
+    .main-drag p{
+        margin-left: -5%;
+        max-width: 80%;
+    }
+        .main-drag p{
+            font-size: 16px;
+        }
+    .frase-titulo-3{
+        bottom: -200px;
+    }
+    .box-main-portada .frase-titulo-3.entrar-derecha{
+        right: -10px;
+    }
+    .box-ctn-portada h1{
+        font-size: 10rem;
+    }
+    h2{
+        font: 27px / 1.5 'liquidamber-reguluploadedfile';
+        padding: 0 20px;
+    }
+        .box-main-portada .frase-titulo-1.entrar-derecha{
+            right: 0;
+            top: -55px;
+        }
+        .box-main-portada .frase-titulo-2.entrar-izquierda{
+            left: 0;
+        }
+    .main-discos{
+        background-repeat: repeat;
+        background-size: 100%;
+    }
+    .box-portadas-discos ul li, 
+    .box-hits ul li{
+        margin: 0 10px 20px;
+    }   
+        .box-portadas-discos ul li p{
+            font-size: 20px;
+        }
+        .box-canciones ul li,
+        .box-sencillos ul li,
+        .box-hits-spotify ul li{
+            margin-bottom: 20px;
+        }
+        .box-hits ul li p{
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .alto{
+            height: auto;
+        }
+    .main-discos h4{
+        padding: 0 20px;
+    }
+    .texto-hits,
+    .main-api-spotify p,
+    .box-info-billboard p,
+    .box-karaoke p{
+        padding: 0 20px;
+    }
+        .texto-hits h3{
+            font-size: 32px;
+        }
+        .texto-hits p,
+        .main-api-spotify p,
+        .box-info-billboard p,
+        .box-karaoke p{
+            font-size: 20px;
+        }
+    .box-lista-movil{
+        display: block;
+    }
+    .box-billboard .scrollable{
+        display: none;
+    }
+    .main-api-spotify h3{
+        padding: 0 20px;
+    }
+    .box-indicacion img{
+        max-width: 25px;
+    }
+    .indicacion-movil{
+        display: none;
+    }
+    .box-cifra-youtube p{
+        font-size: 2em;    
+    }
+    .box-info-billboard h4{
+        font-size: 48px;
+        padding: 0 20px;
+    }
+    .box-medidor{
+        border-left: none;
+        padding-left: 10px;
+        width: 93px;        
+    }
+        .box-medidor ul li p{
+            left: 20px;
+            padding: 0 5px;
+        }
+    .box-cancion{
+        max-width: 250px;
+        padding: 0 15px 30px;
+    }
+    .ctn-box-main-sentimientos{
+        max-width: 100%;
+        padding: 0 10px;
+        width: 100%;
+        
+    }
+    .box-main-trivia .question,
+    .box-ctn-resultado{
+        width: 100%;
+    }
+        .box-contador,
+        .box-main-trivia .question p,
+        .box-ctn-resultado p{
+            padding: 0 20px;
+        }
+        .box-main-trivia .question label p{
+            margin: 0 auto;
+            max-width: 240px;            
+            padding: 0;
+        }
+        .box-preguntas{
+            max-width: 100%;
+            width: 89%;
+        }
+    .ctn-metodologia{
+        margin: 0 30px;
+    }
+    .box-footer ul{
+        max-width: 100%;
+        width: 100%;
+    }
+    span.separador-footer{
+        display: none;
+    }   
+    .box-titular{
+        width: 90%;
+    }
+    .box-indicacion p{
+        font-size: 15px !important;
+    }
+    .box-iframe h6{
+        font-size: 32px;
+        margin: 0 auto 15px;
+    }
+    .leyenda-clusters{
+        padding: 0 20px;
+        text-align: center;
+    }
+        .box-leyenda-triangulo{
+            display: block;
+            float: inherit;
+        }
+        .leyenda-clusters p{
+            margin: 8px 0;
+        }
+    .box-resumen-corazones p{
+        font-size: 17px;
+    }
+        .box-album-corazon{
+            margin-top: 30px;
+        }
+        .box-album-corazon .box-leyenda-triangulo{
+            margin: 0 auto;
+        }
+        .box-album-corazon img{
+            max-width: 170px;
+        }
+        p.texto-album-corazon{
+            max-width: 200px;
+            text-align: center;
+        }
+    .box-cifra-youtube h5{
+        font-size: 4rem;
+    }
+    .box-main-portada,
+    .box-footer{
+        background-size: cover;
+    }
+    .box-footer{
+        height: auto;
+        mix-blend-mode: inherit;
+    }
+    p.aviso-verde{
+        margin: 40px 20px;
+    }
+    .ctn-drag{
+        padding-left: 0;
+    }
+    .box-morado p{
+        font-size: 10px !important;
+    }
+    .question img{
+        margin: 0 auto;
+    }
+    .box-main-trivia{
+        height: auto;
+    }
+    .table-wrapper td{
+        padding: 10px 0;
+    }
+    .table-wrapper table th p{
+        padding: 0 2px;
+    }
+    .color-blanco span i{
+        display: inline-block;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    body, html{
+        overflow-x: hidden;
+    }
+    .main-drag{
+        transform: translate(5%, 0);
+    }
+
+}
+
+@media only screen and (max-height: 732px){
+
+}
