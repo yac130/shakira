@@ -27,7 +27,7 @@ function karaoke5() {
             }
         }
     };
-    xhttp5.open("GET", "https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/letras/tqg.lrc?v5", true);
+    xhttp5.open("GET", "https://yac130.github.io/shakira/letras/tqg.lrc?v5", true);
     xhttp5.send();
 }
 

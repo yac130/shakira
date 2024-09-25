@@ -27,7 +27,7 @@ function karaoke6() {
             }
         }
     };
-    xhttp6.open("GET", "https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/letras/ultima.lrc?v8", true);
+    xhttp6.open("GET", "https://yac130.github.io/shakira/letras/ultima.lrc?v8", true);
     xhttp6.send();
 }
 

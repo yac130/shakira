@@ -27,7 +27,7 @@ function karaoke4() {
             }
         }
     };
-    xhttp4.open("GET", "https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/letras/cazador-de-amor.lrc?v5", true);
+    xhttp4.open("GET", "https://yac130.github.io/shakira/letras/cazador-de-amor.lrc?v5", true);
     xhttp4.send();
 }
 

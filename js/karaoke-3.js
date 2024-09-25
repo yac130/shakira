@@ -27,7 +27,7 @@ function karaoke3() {
             }
         }
     };
-    xhttp3.open("GET", "https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/letras/when-a-woman.lrc?v4", true);
+    xhttp3.open("GET", "https://yac130.github.io/shakira/letras/when-a-woman.lrc?v4", true);
     xhttp3.send();
 }
 
