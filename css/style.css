@@ -418,8 +418,7 @@ html {
                 .box-sencillos.entrar-abajo-sencillos{   
                     opacity: 1;
                     top: 0;                    
-                    animation: entrarAbajoSencillos .5s ease-in-out;
-                    
+                    animation: entrarAbajoSencillos .5s ease-in-out;                    
                 } 
                 .box-sencillos.salir-abajo-sencillos{
                     animation: salirAbajoSencillos .5s ease-in-out;
@@ -428,12 +427,72 @@ html {
                 .box-hits-spotify.entrar-abajo-hits{   
                     opacity: 1;
                     top: 0;                    
-                    animation: entrarAbajoHits .5s ease-in-out;
-                    
+                    animation: entrarAbajoHits .5s ease-in-out;                    
                 } 
                 .box-hits-spotify.salir-abajo-hits{
                     animation: salirAbajoHits .5s ease-in-out;
                 }
+
+                .shakira-portada-izq{
+                    left: -100%;
+                    max-width: 500px;
+                    position: absolute;
+                    top: 25%;
+                }
+                    .box-main-portada .shakira-portada-izq.entrar-izquierda-shakira{   
+                        left: -5%;                    
+                        animation: entrar-izquierda-shakira 2s ease-in-out,
+                                   rotateShakeFrase 2s infinite alternate ease-in-out;
+                    } 
+                    @keyframes entrar-izquierda-shakira {
+                        0% {
+                            left: -100%;  
+                            transform: rotate(4deg); 
+                        }
+                        100% {
+                            left: -5%;  
+                            transform: rotate(-4deg); 
+                        }
+                    }                
+                    @keyframes salir-izquierda-shakira {
+                        from {
+                            left: -5%;  
+                        }
+                        to {
+                            left: -100%; 
+                        }
+                        
+                    }
+                .shakira-portada-der{
+                    right: -100%;
+                    max-width: 500px;
+                    position: absolute;
+                    top: 25%;
+                }
+                    .box-main-portada .shakira-portada-der.entrar-derecha-shakira{   
+                        right: -5%;                    
+                        animation: entrar-derecha-shakira 2s ease-in-out,
+                                   rotateShakeFrase 2s infinite alternate ease-in-out;
+                    } 
+                    @keyframes entrar-derecha-shakira {
+                        0% {
+                            right: -100%;  
+                            transform: rotate(4deg); 
+                        }
+                        100% {
+                            right: -5%;  
+                            transform: rotate(-4deg); 
+                        }
+                    }                
+                    @keyframes salir-derecha-shakira {
+                        from {
+                            right: -5%;  
+                        }
+                        to {
+                            right: -100%; 
+                        }
+                        
+                    }
 
 .box-bajada{
     background-color: #101010;
@@ -2162,9 +2221,14 @@ html {
     .box-sencillos ul,
     ul.notas-hits{
         max-width: 90%;
+        text-align: center;
     }
     .box-hits ul.hits li{
         max-width: 65px;
+    }
+    .shakira-portada-der,
+    .shakira-portada-izq{
+        display: none;
     }
 }
 
