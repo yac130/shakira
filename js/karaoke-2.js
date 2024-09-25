@@ -27,7 +27,7 @@ function karaoke2() {
             }
         }
     };
-    xhttp2.open("GET", "https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/letras/cut-me-deep.lrc?v12", true);
+    xhttp2.open("GET", "https://yac130.github.io/shakira/letras/cut-me-deep.lrc?v12", true);
     xhttp2.send();
 }
 

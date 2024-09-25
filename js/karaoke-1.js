@@ -29,7 +29,7 @@
                     }
                 }
             };
-            xhttp.open("GET", "https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/letras/te-dejo-madrid.lrc?v3", true);
+            xhttp.open("GET", "https://yac130.github.io/shakira/letras/te-dejo-madrid.lrc?v3", true);
             xhttp.send();
         }
 
