@@ -19,16 +19,9 @@
     <script src="https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/puerto-de-chancay/js/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/puerto-de-chancay/js/animation.gsap.js"></script>
-    <script src="https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales/el-metro-interminable-ecpm/js/debug.addIndicators.js"></script>
+    <!--<script src="https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales/el-metro-interminable-ecpm/js/debug.addIndicators.js"></script>-->
     <script src="https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales/alan-garcia-una-vida-de-portada-ecpm/js/sharer.min.js"></script> 
-    <!--<script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>-->
-    <script src="https://yac130.github.io/shakira/js/karaoke-1.js?v18"></script>
-    <script src="https://yac130.github.io/shakira/js/karaoke-2.js?v18"></script>
-    <script src="https://yac130.github.io/shakira/js/karaoke-3.js?v25"></script>
-    <script src="https://yac130.github.io/shakira/js/karaoke-4.js?v25"></script>
-    <script src="https://yac130.github.io/shakira/js/karaoke-5.js?v25"></script>
-    <script src="https://yac130.github.io/shakira/js/karaoke-6.js?v28"></script>
-
+    
     <style>
         #gpt_zocalo, 
         #clever-45754-sticky-footer-shadow,
@@ -10409,6 +10402,471 @@
             });
         });
 
+
+    </script>
+
+    <!-- karaoke -->
+    <script>
+        var dates = [];
+        var startSeconds;
+        var linesCount;
+        var updateTimeout;
+
+        function karaoke() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var text = xhttp.responseText;
+                    var lines = text.split("\n");
+                    linesCount = lines.length;
+                    for (var i = 0; i < lines.length; i++) {
+                        if (lines[i] != "") {
+                            var lyricText = lines[i].replace(/ *\[[^)]*\] */g, "");
+                            var timing = lines[i].match(/\[([^)]+)\]/)[1];
+                            var time = timing.split(':');
+                            var date = new Date();
+                            date.setMinutes(time[0]);
+                            var subTime = time[1].split('.');
+                            date.setSeconds(subTime[0]);
+                            date.setMilliseconds(subTime[1] * 10);
+                            dates[i] = date;
+                            var style = (i == 0) ? "highlight" : "plain";
+                            document.getElementById("lyrics").innerHTML += "<div class=\"" + style + "\" id=\"" + i + "\">" + lyricText + "</div>";
+                        }
+                    }
+                }
+            };
+            xhttp.open("GET", "https://yac130.github.io/shakira/letras/te-dejo-madrid.lrc?v3", true);
+            xhttp.send();
+        }
+
+        function start() {
+            var player = document.getElementById("player");
+            var otherAudios = document.querySelectorAll('audio');
+            otherAudios.forEach(audio => {
+                if (audio !== player) {
+                    audio.pause();
+                }
+            });
+
+            startSeconds = new Date().getTime();
+            var lyricsDivs = document.querySelectorAll("#lyrics > div");
+            lyricsDivs.forEach(function(div) {
+                div.className = "plain";
+            });
+
+            var nextTime = dates[0].getMinutes() * 60000 + dates[0].getSeconds() * 1000 + dates[0].getMilliseconds();
+            updateTimeout = setTimeout(function() { update(0, linesCount) }, nextTime);
+        }
+
+        function update(current, last) {
+            if (current < last) {
+                document.getElementById(current).className = "highlight";
+                if (current != 0) {
+                    document.getElementById(current - 1).className = "plain";
+                }
+                var currentSeconds = new Date().getTime();
+                var passedSeconds = currentSeconds - startSeconds;
+                var nextTime = dates[current].getMinutes() * 60000 + dates[current].getSeconds() * 1000 + dates[current].getMilliseconds() - passedSeconds;
+
+                if (updateTimeout) {
+                    clearTimeout(updateTimeout);
+                }
+
+                updateTimeout = setTimeout(function() { update(current + 1, last) }, nextTime);
+            }
+        }
+
+        var dates2 = [];
+        var startSeconds2;
+        var linesCount2;
+        var updateTimeout2;
+
+        function karaoke2() {
+            var xhttp2 = new XMLHttpRequest();
+            xhttp2.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var text2 = xhttp2.responseText;
+                    var lines2 = text2.split("\n");
+                    linesCount2 = lines2.length;
+                    for (var i = 0; i < lines2.length; i++) {
+                        if (lines2[i] != "") {
+                            var lyricText2 = lines2[i].replace(/ *\[[^)]*\] */g, "");
+                            var timing2 = lines2[i].match(/\[([^)]+)\]/)[1];
+                            var time2 = timing2.split(':');
+                            var date2 = new Date();
+                            date2.setMinutes(time2[0]);
+                            var subTime2 = time2[1].split('.');
+                            date2.setSeconds(subTime2[0]);
+                            date2.setMilliseconds(subTime2[1] * 10);
+                            dates2[i] = date2;
+                            var style2 = (i == 0) ? "highlight2" : "plain2";
+                            document.getElementById("lyrics2").innerHTML += "<div class=\"" + style2 + "\" id=\"lyrics2-" + i + "\">" + lyricText2 + "</div>";
+                        }
+                    }
+                }
+            };
+            xhttp2.open("GET", "https://yac130.github.io/shakira/letras/cut-me-deep.lrc?v12", true);
+            xhttp2.send();
+        }
+
+        function start2() {
+            var player2 = document.getElementById("player2");
+            var otherAudios = document.querySelectorAll('audio');
+            otherAudios.forEach(audio => {
+                if (audio !== player2) {
+                    audio.pause();
+                }
+            });
+
+            startSeconds2 = new Date().getTime();
+            var lyricsDivs2 = document.querySelectorAll("#lyrics2 > div");
+            lyricsDivs2.forEach(function(div) {
+                div.className = "plain2";
+            });
+
+            var nextTime2 = dates2[0].getMinutes() * 60000 + dates2[0].getSeconds() * 1000 + dates2[0].getMilliseconds();
+            updateTimeout2 = setTimeout(function() { update2(0, linesCount2) }, nextTime2);
+        }
+
+        function update2(current2, last2) {
+            if (current2 < last2) {
+                document.getElementById("lyrics2-" + current2).className = "highlight2";
+                if (current2 != 0) {
+                    document.getElementById("lyrics2-" + (current2 - 1)).className = "plain2";
+                }
+                var currentSeconds2 = new Date().getTime();
+                var passedSeconds2 = currentSeconds2 - startSeconds2;
+                var nextTime2 = dates2[current2].getMinutes() * 60000 + dates2[current2].getSeconds() * 1000 + dates2[current2].getMilliseconds() - passedSeconds2;
+
+                if (updateTimeout2) {
+                    clearTimeout(updateTimeout2);
+                }
+
+                updateTimeout2 = setTimeout(function() { update2(current2 + 1, last2) }, nextTime2);
+            }
+        }
+
+
+        var dates3 = []; // Lyrics timing
+        var startSeconds3; // Start time
+        var linesCount3; // Number of Lyric lines
+        var updateTimeout3; // To keep track of the current update timeout
+
+        function karaoke3() {
+            var xhttp3 = new XMLHttpRequest(); // Load lyrics
+            xhttp3.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var text3 = xhttp3.responseText;
+                    var lines3 = text3.split("\n");
+                    linesCount3 = lines3.length;
+                    for (var i = 0; i < lines3.length; i++) {
+                        if (lines3[i] != "") {
+                            var lyricText3 = lines3[i].replace(/ *\[[^)]*\] */g, ""); // Read lyric text
+                            var timing3 = lines3[i].match(/\[([^)]+)\]/)[1]; // Read lyric timing
+                            var time3 = timing3.split(':');
+                            var date3 = new Date();
+                            date3.setMinutes(time3[0]);
+                            var subTime3 = time3[1].split('.');
+                            date3.setSeconds(subTime3[0]);
+                            date3.setMilliseconds(subTime3[1] * 10);
+                            dates3[i] = date3;
+                            var style3 = (i == 0) ? "highlight3" : "plain3";
+                            document.getElementById("lyrics3").innerHTML += "<div class=\"" + style3 + "\" id=\"lyrics3-" + i + "\">" + lyricText3 + "</div>"; // Add lyric to page
+                        }
+                    }
+                }
+            };
+            xhttp3.open("GET", "https://yac130.github.io/shakira/letras/when-a-woman.lrc?v4", true);
+            xhttp3.send();
+        }
+
+        function start3() {
+            var player3 = document.getElementById("player3");
+
+            // Pausar otros audios si están reproduciéndose
+            var otherAudios = document.querySelectorAll('audio');
+            otherAudios.forEach(audio => {
+                if (audio !== player3) {
+                    audio.pause(); // Pausa cualquier otro audio
+                }
+            });
+
+            startSeconds3 = new Date().getTime(); // Song just started
+
+            // Clear previous lyrics highlight if any
+            var lyricsDivs3 = document.querySelectorAll("#lyrics3 > div");
+            lyricsDivs3.forEach(function(div) {
+                div.className = "plain3";
+            });
+
+            // Schedule first lyric update
+            var nextTime3 = dates3[0].getMinutes() * 60000 + dates3[0].getSeconds() * 1000 + dates3[0].getMilliseconds();
+            updateTimeout3 = setTimeout(function() { update3(0, linesCount3) }, nextTime3); 
+        }
+
+        function update3(current3, last3) {
+            if (current3 < last3) {
+                document.getElementById("lyrics3-" + current3).className = "highlight3"; // Update current lyric style
+                if (current3 != 0) {
+                    document.getElementById("lyrics3-" + (current3 - 1)).className = "plain3"; // Update previous lyric style
+                }
+                var currentSeconds3 = new Date().getTime();
+                var passedSeconds3 = currentSeconds3 - startSeconds3;
+                var nextTime3 = dates3[current3].getMinutes() * 60000 + dates3[current3].getSeconds() * 1000 + dates3[current3].getMilliseconds() - passedSeconds3;
+                
+                // Clear previous update timeout
+                if (updateTimeout3) {
+                    clearTimeout(updateTimeout3);
+                }
+
+                // Schedule next lyric update
+                updateTimeout3 = setTimeout(function() { update3(current3 + 1, last3) }, nextTime3); 
+            }
+        }
+
+
+        var dates4 = []; // Lyrics timing
+        var startSeconds4; // Start time
+        var linesCount4; // Number of Lyric lines
+        var updateTimeout4; // To keep track of the current update timeout
+
+        function karaoke4() {
+            var xhttp4 = new XMLHttpRequest(); // Load lyrics
+            xhttp4.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var text4 = xhttp4.responseText;
+                    var lines4 = text4.split("\n");
+                    linesCount4 = lines4.length;
+                    for (var i = 0; i < lines4.length; i++) {
+                        if (lines4[i] != "") {
+                            var lyricText4 = lines4[i].replace(/ *\[[^)]*\] */g, ""); // Read lyric text
+                            var timing4 = lines4[i].match(/\[([^)]+)\]/)[1]; // Read lyric timing
+                            var time4 = timing4.split(':');
+                            var date4 = new Date();
+                            date4.setMinutes(time4[0]);
+                            var subTime4 = time4[1].split('.');
+                            date4.setSeconds(subTime4[0]);
+                            date4.setMilliseconds(subTime4[1] * 10);
+                            dates4[i] = date4;
+                            var style4 = (i == 0) ? "highlight4" : "plain4";
+                            document.getElementById("lyrics4").innerHTML += "<div class=\"" + style4 + "\" id=\"lyrics4-" + i + "\">" + lyricText4 + "</div>"; // Add lyric to page
+                        }
+                    }
+                }
+            };
+            xhttp4.open("GET", "https://yac130.github.io/shakira/letras/cazador-de-amor.lrc?v5", true);
+            xhttp4.send();
+        }
+
+        function start4() {
+            var player4 = document.getElementById("player4");
+
+            // Pausar otros audios si están reproduciéndose
+            var otherAudios = document.querySelectorAll('audio');
+            otherAudios.forEach(audio => {
+                if (audio !== player4) {
+                    audio.pause(); // Pausa cualquier otro audio
+                }
+            });
+
+            startSeconds4 = new Date().getTime(); // Song just started
+
+            // Clear previous lyrics highlight if any
+            var lyricsDivs4 = document.querySelectorAll("#lyrics4 > div");
+            lyricsDivs4.forEach(function(div) {
+                div.className = "plain4";
+            });
+
+            // Schedule first lyric update
+            var nextTime4 = dates4[0].getMinutes() * 60000 + dates4[0].getSeconds() * 1000 + dates4[0].getMilliseconds();
+            updateTimeout4 = setTimeout(function() { update4(0, linesCount4) }, nextTime4); 
+        }
+
+        function update4(current4, last4) {
+            if (current4 < last4) {
+                document.getElementById("lyrics4-" + current4).className = "highlight4"; // Update current lyric style
+                if (current4 != 0) {
+                    document.getElementById("lyrics4-" + (current4 - 1)).className = "plain4"; // Update previous lyric style
+                }
+                var currentSeconds4 = new Date().getTime();
+                var passedSeconds4 = currentSeconds4 - startSeconds4;
+                var nextTime4 = dates4[current4].getMinutes() * 60000 + dates4[current4].getSeconds() * 1000 + dates4[current4].getMilliseconds() - passedSeconds4;
+                
+                // Clear previous update timeout
+                if (updateTimeout4) {
+                    clearTimeout(updateTimeout4);
+                }
+
+                // Schedule next lyric update
+                updateTimeout4 = setTimeout(function() { update4(current4 + 1, last4) }, nextTime4); 
+            }
+        }
+
+
+        var dates5 = []; // Lyrics timing
+        var startSeconds5; // Start time
+        var linesCount5; // Number of Lyric lines
+        var updateTimeout5; // To keep track of the current update timeout
+
+        function karaoke5() {
+            var xhttp5 = new XMLHttpRequest(); // Load lyrics
+            xhttp5.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var text5 = xhttp5.responseText;
+                    var lines5 = text5.split("\n");
+                    linesCount5 = lines5.length;
+                    for (var i = 0; i < lines5.length; i++) {
+                        if (lines5[i] != "") {
+                            var lyricText5 = lines5[i].replace(/ *\[[^)]*\] */g, ""); // Read lyric text
+                            var timing5 = lines5[i].match(/\[([^)]+)\]/)[1]; // Read lyric timing
+                            var time5 = timing5.split(':');
+                            var date5 = new Date();
+                            date5.setMinutes(time5[0]);
+                            var subTime5 = time5[1].split('.');
+                            date5.setSeconds(subTime5[0]);
+                            date5.setMilliseconds(subTime5[1] * 10);
+                            dates5[i] = date5;
+                            var style5 = (i == 0) ? "highlight5" : "plain5";
+                            document.getElementById("lyrics5").innerHTML += "<div class=\"" + style5 + "\" id=\"lyrics5-" + i + "\">" + lyricText5 + "</div>"; // Add lyric to page
+                        }
+                    }
+                }
+            };
+            xhttp5.open("GET", "https://yac130.github.io/shakira/letras/tqg.lrc?v5", true);
+            xhttp5.send();
+        }
+
+        function start5() {
+            var player5 = document.getElementById("player5");
+
+            // Pausar otros audios si están reproduciéndose
+            var otherAudios = document.querySelectorAll('audio');
+            otherAudios.forEach(audio => {
+                if (audio !== player5) {
+                    audio.pause(); // Pausa cualquier otro audio
+                }
+            });
+
+            startSeconds5 = new Date().getTime(); // Song just started
+
+            // Clear previous lyrics highlight if any
+            var lyricsDivs5 = document.querySelectorAll("#lyrics5 > div");
+            lyricsDivs5.forEach(function(div) {
+                div.className = "plain5";
+            });
+
+            // Schedule first lyric update
+            var nextTime5 = dates5[0].getMinutes() * 60000 + dates5[0].getSeconds() * 1000 + dates5[0].getMilliseconds();
+            updateTimeout5 = setTimeout(function() { update5(0, linesCount5) }, nextTime5); 
+        }
+
+        function update5(current5, last5) {
+            if (current5 < last5) {
+                document.getElementById("lyrics5-" + current5).className = "highlight5"; // Update current lyric style
+                if (current5 != 0) {
+                    document.getElementById("lyrics5-" + (current5 - 1)).className = "plain5"; // Update previous lyric style
+                }
+                var currentSeconds5 = new Date().getTime();
+                var passedSeconds5 = currentSeconds5 - startSeconds5;
+                var nextTime5 = dates5[current5].getMinutes() * 60000 + dates5[current5].getSeconds() * 1000 + dates5[current5].getMilliseconds() - passedSeconds5;
+                
+                // Clear previous update timeout
+                if (updateTimeout5) {
+                    clearTimeout(updateTimeout5);
+                }
+
+                // Schedule next lyric update
+                updateTimeout5 = setTimeout(function() { update5(current5 + 1, last5) }, nextTime5); 
+            }
+        }
+
+
+        var dates6 = []; // Lyrics timing
+        var startSeconds6; // Start time
+        var linesCount6; // Number of Lyric lines
+        var updateTimeout6; // To keep track of the current update timeout
+
+        function karaoke6() {
+            var xhttp6 = new XMLHttpRequest(); // Load lyrics
+            xhttp6.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var text6 = xhttp6.responseText;
+                    var lines6 = text6.split("\n");
+                    linesCount6 = lines6.length;
+                    for (var i = 0; i < lines6.length; i++) {
+                        if (lines6[i] != "") {
+                            var lyricText6 = lines6[i].replace(/ *\[[^)]*\] */g, ""); // Read lyric text
+                            var timing6 = lines6[i].match(/\[([^)]+)\]/)[1]; // Read lyric timing
+                            var time6 = timing6.split(':');
+                            var date6 = new Date();
+                            date6.setMinutes(time6[0]);
+                            var subTime6 = time6[1].split('.');
+                            date6.setSeconds(subTime6[0]);
+                            date6.setMilliseconds(subTime6[1] * 10);
+                            dates6[i] = date6;
+                            var style6 = (i == 0) ? "highlight6" : "plain6";
+                            document.getElementById("lyrics6").innerHTML += "<div class=\"" + style6 + "\" id=\"lyrics6-" + i + "\">" + lyricText6 + "</div>"; // Add lyric to page
+                        }
+                    }
+                }
+            };
+            xhttp6.open("GET", "https://yac130.github.io/shakira/letras/ultima.lrc?v8", true);
+            xhttp6.send();
+        }
+
+        function start6() {
+            var player5 = document.getElementById("player6");
+
+            // Pausar otros audios si están reproduciéndose
+            var otherAudios = document.querySelectorAll('audio');
+            otherAudios.forEach(audio => {
+                if (audio !== player6) {
+                    audio.pause(); // Pausa cualquier otro audio
+                }
+            });
+
+            startSeconds6 = new Date().getTime(); // Song just started
+
+            // Clear previous lyrics highlight if any
+            var lyricsDivs6 = document.querySelectorAll("#lyrics6 > div");
+            lyricsDivs6.forEach(function(div) {
+                div.className = "plain6";
+            });
+
+            // Schedule first lyric update
+            var nextTime6 = dates6[0].getMinutes() * 60000 + dates6[0].getSeconds() * 1000 + dates6[0].getMilliseconds();
+            updateTimeout6 = setTimeout(function() { update6(0, linesCount6) }, nextTime6); 
+        }
+
+        function update6(current6, last6) {
+            if (current6 < last6) {
+                document.getElementById("lyrics6-" + current6).className = "highlight6"; // Update current lyric style
+                if (current6 != 0) {
+                    document.getElementById("lyrics6-" + (current6 - 1)).className = "plain6"; // Update previous lyric style
+                }
+                var currentSeconds6 = new Date().getTime();
+                var passedSeconds6 = currentSeconds6 - startSeconds6;
+                var nextTime6 = dates6[current6].getMinutes() * 60000 + dates6[current6].getSeconds() * 1000 + dates6[current6].getMilliseconds() - passedSeconds6;
+                
+                // Clear previous update timeout
+                if (updateTimeout6) {
+                    clearTimeout(updateTimeout6);
+                }
+
+                // Schedule next lyric update
+                updateTimeout6 = setTimeout(function() { update6(current6 + 1, last6) }, nextTime6); 
+            }
+        }
+
+        window.addEventListener('load', function() {
+            karaoke();
+            karaoke2();
+            karaoke3();
+            karaoke4();
+            karaoke5();
+            karaoke6();
+        });
 
     </script>
     
