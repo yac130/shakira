@@ -1107,6 +1107,12 @@ html {
                 color: #F81616;
                 font-family: 'liquidamber-reguluploadedfile'; 
             }
+            .box-cifra-youtube img{
+                margin: 8px 3px;
+                max-width: 100px;
+                display: inline-block;
+                vertical-align: top;
+            }
     .main-api-spotify::after{
         border-color: transparent transparent #101010 transparent;
     }
@@ -1228,13 +1234,21 @@ html {
     position: relative;
     z-index: 20;
 }
-    .box-separador p{
-        color: #fff;
-        font: 26px/1.2 'liquidamber-reguluploadedfile';
-        margin: 20px auto;
-        max-width: 400px;
+    .box-separador h4{
+        font: 42px/1.2 'liquidamber-reguluploadedfile';
+        margin: 0 auto;
         text-align: center;
     }
+    .box-separador p{
+        color: #fff;
+        font: 16px/1.5 'prelobook';
+        margin: 20px auto;
+        max-width: 490px;
+        text-align: center;
+    }
+        .box-separador span{
+            font-family: 'prelobold';
+        }
 .box-billboard{
     background-color: #9A70FA;    
     position: relative;
@@ -2333,6 +2347,11 @@ html {
     img.logo-billboard{
         display: block;
         margin: 0 20px;
+    }
+    .box-separador p{
+        font-size: 20px;
+        line-height: 1.6;
+        padding: 0 20px;
     }
 }
 
