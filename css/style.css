@@ -581,6 +581,19 @@ html {
         padding: 0;
         text-align: center;
     }
+        .box-portadita,
+        .box-portadita-sencillos{
+            min-height: 150px;
+            opacity: 0;
+        }
+        .entrar-opacidad-portadita{
+            opacity: 1;
+            transition: ease-in-out all;
+            transition-duration: .5s;
+        }
+        .salir-opacidad-portadita{
+            opacity: 0;
+        }
     .box-portadas-discos h6,
     .box-canciones h6,
     .box-sencillos h6{
