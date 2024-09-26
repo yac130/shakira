@@ -208,6 +208,35 @@ html {
     position: relative;
     z-index: 20;
 }
+    .bg-grafico-1{
+        max-width: 400px;
+        position: absolute;
+        right: 0;
+        top: -10px;
+    }
+    .bg-grafico-2{
+        max-width: 450px;
+        position: absolute;
+        left: -150px;
+        top: -100px;
+    }
+    .bg-grafico-3{
+        max-width: 450px;
+        position: absolute;
+        bottom: -20px;
+    }
+    .bg-grafico-4{
+        left: -195px;
+        max-width: 400px;
+        position: absolute;
+        top: 15%;
+    }
+    .bg-grafico-5{
+        right: -275px;
+        max-width: 550px;
+        position: absolute;
+        top: 0;
+    }
     .box-ctn-portada{
         height: 200px;
         left: 50%;
@@ -246,7 +275,7 @@ html {
                     max-width: 230px;
                 }
                 .frase-titulo-3{
-                    bottom: -135px;                   
+                    bottom: -155px;                   
                     max-width: 230px;
                     right: -200%;
                 }
@@ -499,7 +528,7 @@ html {
     background-image: url('https://yac130.github.io/shakira/img/textura-negra.gif');
     background-size: cover;
     margin: 0 auto;
-    padding: 5vh 0 30vh;
+    padding: 25vh 0;
     position: relative;
     z-index: 20;
 }
