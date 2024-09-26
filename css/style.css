@@ -716,6 +716,7 @@ html {
             opacity: .3;
         }
         .alto{
+            color: #01d856 !important;
             height: 100px;
         }
     .box-hits{
@@ -727,12 +728,16 @@ html {
         }
             .box-hits ul li p{
                 color: #fff;
-                font: 17px / 1.1 'liquidamber-reguluploadedfile';
+                font: 16px / 1.1 'liquidamber-reguluploadedfile';
                 margin: 0 auto;
             }  
                 .nombre-album{
                     min-height: 60px;
-                }
+                }   
+                    .nombre-album span{
+                        display: block;
+                        font-size: 11px;
+                    }
             .box-hits ul li iframe{
                 transform: translate(-35%, 0);
             }
@@ -774,7 +779,7 @@ html {
                         font-size: 13px;
                     }
         .texto-hits{
-            margin: 40px auto;
+            margin: 100px auto 40px;
             max-width: 400px;
         }
             .texto-hits h3,
@@ -819,7 +824,7 @@ html {
     .main-api-spotify p{
         color: #fff;
         font: 15px/1.6 'prelobook';
-        margin: 0 auto;
+        margin: 0 auto 20px;
         max-width: 385px;
     }
         p.aviso-verde{
@@ -1231,6 +1236,9 @@ html {
         text-align: left;
         vertical-align: top;
     }
+        img.logo-billboard{
+            max-width: 250px;
+        }
         .box-info-billboard h4{
             color: #000000;
             font: 42px/1.1 'liquidamber-reguluploadedfile';
@@ -2308,6 +2316,10 @@ html {
     .shakira-portada-der,
     .shakira-portada-izq{
         display: none;
+    }
+    img.logo-billboard{
+        display: block;
+        margin: 0 20px;
     }
 }
 
