@@ -521,7 +521,7 @@ html {
 }
     .main-discos h4{
         font: 42px/1 'liquidamber-reguluploadedfile';
-        margin: 0 auto 40px;
+        margin: 0 auto 30px;
         text-align: center;
     }
         .main-discos h4 span{  
@@ -529,6 +529,12 @@ html {
             font-size: 30px;    
             padding: 5px 20px;
         }
+            .main-discos h4 span img{
+                display: inline-block;
+                margin: 10px 5px;
+                max-width: 100px;
+                vertical-align: top;
+            }
             .color-verde{
                 color: #609D4F;
             }
@@ -574,6 +580,14 @@ html {
         margin: 0 auto;   
         padding: 0;
         text-align: center;
+    }
+    .box-portadas-discos h6,
+    .box-canciones h6,
+    .box-sencillos h6{
+        font: 15px/1.4 'prelobook';
+        margin: 20px auto;
+        max-width: 400px;
+        text-align: left;
     }
     .box-canciones ul,
     .box-sencillos ul{
@@ -622,7 +636,8 @@ html {
             text-align: left;
             vertical-align: top;
         }
-            .box-canciones ul li p{
+            .box-canciones ul li p,
+            .box-sencillos ul li p{
                 background-color: #F81616;
                 box-sizing: border-box;
                 color: #fff;
@@ -632,6 +647,9 @@ html {
                 padding: 2px 1px;                
                 text-align: center;
             }
+                p.total-sencillos{
+                    background-color: #ED95ED !important;
+                }
             .box-canciones ul li svg,
             .box-sencillos ul li svg,
             .box-hits-spotify ul li svg{
@@ -639,9 +657,15 @@ html {
                 max-width: 15px;
                 vertical-align: top;
             }
-            .box-canciones p.indicador-disco{
+            .box-canciones p.indicador-disco,
+            .box-sencillos p.indicador-disco{
                 background-color: #2e2e2e;
             }
+                .box-sencillos p.indicador-disco{
+                    color: #fff;
+                    font: 18px / 1.1 'liquidamber-reguluploadedfile';
+                    text-align: center;
+                }
     .box-sencillos{
         margin: 10px auto 40px;
         opacity: 0;
