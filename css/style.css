@@ -664,7 +664,8 @@ html {
         top: -200px;
     }
         .box-hits-spotify::after,
-        .main-api-spotify::after{
+        .main-api-spotify::after,
+        .box-billboard::before{
             border-style: solid;
             border-width: 0 60px 40px 60px;
             border-color: transparent transparent #1ED760 transparent;
@@ -678,6 +679,12 @@ html {
             width: 0px; 
             z-index: 30;
         }
+            .box-billboard::before{
+                border-color: transparent transparent #9A70FA transparent;
+                bottom: inherit;
+                top: -35px;
+                transform: rotate(0);
+            }
         .box-hits-spotify ul li{
             
         }
@@ -1079,55 +1086,98 @@ html {
         font-size: 50px;
         max-width: 650px;   
     }
-    .box-mundo img.mapa{
-        display: block;
-        margin: 30px auto;
-        max-width: 650px;
+    .box-mapa{
+        position: relative;
     }
-    .box-mundo ul{
-        padding: 0;
-        text-align: center;
-    }
-        .box-mundo ul li{
-            display: inline-block;
-            list-style: none;
-            margin: 10px 15px;
-            max-width: 150px;
-            vertical-align: top;           
+        .box-mundo img.mapa{
+            display: block;
+            margin: 30px auto;
+            max-width: 650px;
         }
-            .box-mundo ul li:nth-child(1){
-                animation: rotateShakeVideo-1 .2s infinite alternate ease-in-out;
+        .box-mundo ul{
+            margin-top: 90px;
+            padding: 0;
+            position: absolute;
+            text-align: center;
+            width: 100%;
+        }
+            .box-mundo ul li{
+                display: inline-block;
+                list-style: none;
+                margin: 10px 15px;
+                max-width: 150px;
+                vertical-align: top;           
             }
-            .box-mundo ul li:nth-child(2){
-                animation: rotateShakeVideo-2 .2s infinite alternate ease-in-out;
-            }
-            .box-mundo ul li:nth-child(3){
-                animation: rotateShakeVideo-1 .2s infinite alternate ease-in-out;
-            }
-                @keyframes rotateShakeVideo-1 {
-                    0% {
-                        transform: rotate(4deg); 
-                    }
-                    100% {
-                        transform: rotate(-4deg); 
-                    }
+                .box-mundo ul li:nth-child(1){
+                    animation: rotateShakeVideo-1 .2s infinite alternate ease-in-out;
                 }
-                @keyframes rotateShakeVideo-2 {
-                    0% {
-                        transform: rotate(-6deg); 
+                    .box-mundo ul li:nth-child(1).opacidadVideoEntrar{
+                        animation: opacityVideo-1-entrar 1s ease-in-out,
+                                   rotateShakeVideo-1 .2s infinite alternate ease-in-out;
                     }
-                    100% {
-                        transform: rotate(6deg); 
+                    .box-mundo ul li:nth-child(1).opacidadVideoSalir{
+                        animation: opacityVideo-1-salir 1s ease-in-out;
                     }
+                .box-mundo ul li:nth-child(2){
+                    animation: rotateShakeVideo-2 .2s infinite alternate ease-in-out;
                 }
-            .entrar-opacidad-mundo{
-                opacity: 1;
-                transition: .3s all ease-in-out;
-            }
-            .salir-opacidad-mundo{
-                opacity: 0;
-                transition: .3s all ease-in-out;
-            }
+                    .box-mundo ul li:nth-child(2).opacidadVideoEntrar{
+                        animation: opacityVideo-1-entrar 2s ease-in-out,
+                                   rotateShakeVideo-2 .2s infinite alternate ease-in-out;
+                    }
+                    .box-mundo ul li:nth-child(2).opacidadVideoSalir{
+                        animation: opacityVideo-1-salir 1s ease-in-out;
+                    }
+                .box-mundo ul li:nth-child(3){
+                    animation: rotateShakeVideo-1 .2s infinite alternate ease-in-out;
+                }
+                    .box-mundo ul li:nth-child(3).opacidadVideoEntrar{
+                        animation: opacityVideo-1-entrar 3s ease-in-out,
+                                   rotateShakeVideo-1 .2s infinite alternate ease-in-out;
+                    }
+                    .box-mundo ul li:nth-child(3).opacidadVideoSalir{
+                        animation: opacityVideo-1-salir 1s ease-in-out;
+                    }
+                    @keyframes rotateShakeVideo-1 {
+                        0% {
+                            transform: rotate(4deg); 
+                        }
+                        100% {
+                            transform: rotate(-4deg); 
+                        }
+                    }
+                    @keyframes opacityVideo-1-entrar {
+                        0% {
+                            opacity: 0; 
+                        }
+                        100% {
+                            opacity: 1; 
+                        }
+                    }
+                    @keyframes opacityVideo-1-salir {
+                        0% {
+                            opacity: 1; 
+                        }
+                        100% {
+                            opacity: 0; 
+                        }
+                    }
+                    @keyframes rotateShakeVideo-2 {
+                        0% {
+                            transform: rotate(-6deg); 
+                        }
+                        100% {
+                            transform: rotate(6deg); 
+                        }
+                    }
+                .entrar-opacidad-mundo{
+                    opacity: 1;
+                    transition: .3s all ease-in-out;
+                }
+                .salir-opacidad-mundo{
+                    opacity: 0;
+                    transition: .3s all ease-in-out;
+                }
 .box-separador{
     background-color: #101010;
     background-image: url('https://yac130.github.io/shakira/img/textura-negra.gif');
@@ -1232,20 +1282,20 @@ html {
                     max-height: inherit;
                     max-width: inherit;
                     overflow-y: hidden;
-                    width: 1220px;
+                    width: 930px;
                 }
                     .box-billboard ul.lista-movil li{
                         margin: 10px 20px;
                     }
                     .box-billboard ul.lista-movil li img{
-                        max-width: 200px;
+                        max-width: 140px;
                         pointer-events: none;
                     }
 .box-karaoke{
     background: #101010;
     background-image: url('https://yac130.github.io/shakira/img/textura-negra.gif');
     background-size: cover;
-    padding: 50px 0;
+    padding: 100px 0 50px;
     position: relative;
     z-index: 30;
 }
@@ -1578,7 +1628,7 @@ html {
                         opacity: 1;
                         visibility: visible;                        
                     }
-                    .alegria{
+                    .Alegría{
                         background-color: #d9cc5c;
                     }
                     .disgusto{
@@ -1631,7 +1681,7 @@ html {
     background-color: #101010;
     background-image: url('https://yac130.github.io/shakira/img/textura-negra.gif');
     background-size: 100%;
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
     z-index: 30;
 }
@@ -1680,7 +1730,7 @@ html {
 .box-main-trivia{   
     background: #101010;   
     display: none;
-    height: 100vh; 
+    min-height: 100vh; 
     position: relative;
     z-index: 30;
 }
@@ -1758,6 +1808,9 @@ html {
                 margin-bottom: 10px; 
                 padding: 10px;
             }
+                .box-main-trivia .question label:hover p{
+                    color: #F3D264;
+                }
                 .box-main-trivia .question label span{
                     background-color: #9A70FA;
                     border-radius: 32px;
@@ -1776,11 +1829,13 @@ html {
                     opacity: 0;
                     width: 0px;
                 }
-                .box-main-trivia .question label.active-label{
+                .box-main-trivia .question label.active-label,
+                .box-main-trivia .question label:hover{
                     border: 1px solid #F3D264;
                     color: #F3D264;
                 }
-                    .box-main-trivia .question label.active-label span{
+                    .box-main-trivia .question label.active-label span,
+                    .box-main-trivia .question label:hover span{
                         background-color: #F3D264;
                     }
         .box-botones{
@@ -1819,7 +1874,7 @@ html {
 .box-main-result{   
     background: #101010; 
     display: none;
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
     z-index: 30;
 }
