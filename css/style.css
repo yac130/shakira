@@ -2426,6 +2426,12 @@ html {
         font: 19px / 1.6 'prelobook';
         padding: 0 20px;
     }
+    .box-mundo ul{
+        margin-top: 60px;
+    }
+        .box-mundo ul li{
+            max-width: 80px;
+        }
 
 
 }
