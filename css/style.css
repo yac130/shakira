@@ -528,10 +528,7 @@ html {
     background-image: url('https://yac130.github.io/shakira/img/textura-negra.gif');
     background-size: cover;
     margin: 0 auto;
-<<<<<<< HEAD
     overflow: hidden;
-=======
->>>>>>> 37da21e639b70816e5c7ab304c1917de159d016e
     padding: 25vh 0;
     position: relative;
     z-index: 20;
@@ -548,7 +545,7 @@ html {
 .main-discos{
     background: #101010;
     background-image: url('https://yac130.github.io/shakira/img/textura-negra.gif');
-    background-size: cover;
+    background-size: 100%;
     position: relative;
     z-index: 40;    
 }
