@@ -265,18 +265,18 @@ html {
                 position: absolute;
             }
                 .frase-titulo-1{
-                    max-width: 230px;
+                    max-width: 285px;
                     right: -200%;
                     top: -5px;  
                 }
                 .frase-titulo-2{
-                    bottom: -115px;
+                    bottom: -170px;
                     left: -200%;
-                    max-width: 230px;
+                    max-width: 285px;
                 }
                 .frase-titulo-3{
                     bottom: -155px;                   
-                    max-width: 230px;
+                    max-width: 285px;
                     right: -200%;
                 }
 
