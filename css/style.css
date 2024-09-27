@@ -2101,6 +2101,9 @@ html {
         .ctn-metodologia p{
             font: 16px / 1.6 'prelobook';
         }
+            .ctn-metodologia p a{
+                color: #D6A852;
+            }
 .box-footer{
     /*background-color: #101010;*/
     /*background-image: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/img/bg-footer.jpg');*/
