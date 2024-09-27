@@ -2112,7 +2112,7 @@ html {
     text-align: center;
     z-index: 40;
     background-image: url('https://yac130.github.io/shakira/img/bg-estrellas-2.gif');
-    mix-blend-mode: lighten;    
+    /*mix-blend-mode: lighten;*/
 }
     .box-footer img{
         display: block;
@@ -2382,12 +2382,12 @@ html {
        
     }
         .box-main-portada .shakira-portada-izq.entrar-izquierda-shakira{
-            max-width: 250px;
-            top: 63px;
+            max-width: 210px;
+            top: 25px;
         }
         .box-main-portada .shakira-portada-der.entrar-derecha-shakira{
-            bottom: 0;
-            max-width: 300px; 
+            bottom: -15px;
+            max-width: 250px; 
             right: 15%;
             top: inherit;           
         }
