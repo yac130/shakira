@@ -2382,7 +2382,7 @@ html {
     }
     .shakira-portada-der,
     .shakira-portada-izq{
-       
+       display: none;
     }
         .box-main-portada .shakira-portada-izq.entrar-izquierda-shakira{
             max-width: 210px;
