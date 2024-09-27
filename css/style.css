@@ -1280,7 +1280,7 @@ html {
         font: 16px/1.5 'prelobook';
         margin: 20px auto;
         max-width: 490px;
-        text-align: center;
+        text-align: left;
     }
         .box-separador span{
             font-family: 'prelobold';
@@ -2170,7 +2170,7 @@ html {
             font-size: 16px;
         }
     .frase-titulo-3{
-        bottom: -200px;
+        bottom: -250px;
     }
     .box-main-portada .frase-titulo-3.entrar-derecha{
         right: -10px;
@@ -2391,8 +2391,11 @@ html {
         .box-main-portada .shakira-portada-der.entrar-derecha-shakira{
             bottom: -15px;
             max-width: 250px; 
-            right: 15%;
+            right: 57%;
             top: inherit;           
+        }
+        .frase-titulo-2{
+            bottom: -135px;
         }
     img.logo-billboard{
         display: block;
