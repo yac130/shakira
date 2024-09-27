@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://yac130.github.io/shakira/css/style.css?v18">
+    <link rel="stylesheet" href="https://yac130.github.io/shakira/css/style.css?v19">
     <!--<link rel="stylesheet" href="../css/style.css?v17">-->
     <link rel="stylesheet" href="https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/puerto-de-chancay/css/examples.css?v4">  
 
@@ -88,7 +88,6 @@
                     <li ondragover="allowDrop(event)" ondrop="dropElement(event)">trabajan</li>
                     <li ondragover="allowDrop(event)" ondrop="dropElement(event)">se cuidan</li>
                     <li class="correcto" ondragover="allowDrop(event)" ondrop="dropElement(event)">lloran</li>
-                    
                 </ul>
             </div>
         </div>
@@ -4106,7 +4105,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="box-cancion"  id="box-miedo" style="display: none;">
+            <div class="box-cancion" id="box-miedo" style="display: none;">
                 <img src="https://yac130.github.io/shakira/img/cover-te-dejo-madrid.webp" alt="" width="100%">                              
                 <div class="background" id="lyrics">
                     <div class="player">
@@ -9914,6 +9913,17 @@
 
     <!-- arrastrar palabra canción -->
     <script>
+        // Función para verificar si todos los grab-elements están colocados correctamente
+        function checkCompletion() {
+            let allBlocked = true;
+            document.querySelectorAll('.grab-element').forEach(function(el) {
+                if (!el.classList.contains('blocked')) {
+                    allBlocked = false;
+                }
+            });
+            return allBlocked;
+        }
+
         // Inicializa la interacción sin arrastre
         document.querySelectorAll('.opciones li').forEach(function(li) {
             li.addEventListener('click', function() {
@@ -9940,10 +9950,12 @@
                     grabElement.classList.add('correctly-placed');
                     grabElement.setAttribute('draggable', 'false');
 
-                    // Comprobar si todos los grab-elements están colocados correctamente
+                    // Si checkCompletion devuelve true, usar scrollTo como alternativa
                     if (checkCompletion()) {
-                        // Scroll suave a la portada (u otra acción final)
-                        document.querySelector('#box-main-portada').scrollIntoView({
+                        const targetElement = document.querySelector('#box-main-portada');
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY; // Obtener la posición en relación a la ventana
+                        window.scrollTo({
+                            top: targetPosition,
                             behavior: 'smooth'
                         });
                     }
@@ -9963,18 +9975,6 @@
                 }
             });
         });
-
-        // Función para verificar si todos los grab-elements están colocados correctamente
-        function checkCompletion() {
-            let allBlocked = true;
-            document.querySelectorAll('.grab-element').forEach(function(el) {
-                if (!el.classList.contains('blocked')) {
-                    allBlocked = false;
-                }
-            });
-            return allBlocked;
-        }
-
 
     </script>
 
@@ -10548,7 +10548,7 @@
     <!-- mostrar canción karaoke-->    
     <script>
         // Seleccionar todos los elementos <li> de la lista
-        const listItems = document.querySelectorAll('ul li');
+        const listItems = document.querySelectorAll('.box-medidor ul li');
 
         // Función para manejar el clic en cada <li>
         listItems.forEach(item => {
