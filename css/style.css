@@ -208,6 +208,35 @@ html {
     position: relative;
     z-index: 20;
 }
+    .bg-grafico-1{
+        max-width: 400px;
+        position: absolute;
+        right: 0;
+        top: -10px;
+    }
+    .bg-grafico-2{
+        max-width: 450px;
+        position: absolute;
+        left: -150px;
+        top: -100px;
+    }
+    .bg-grafico-3{
+        max-width: 450px;
+        position: absolute;
+        bottom: -20px;
+    }
+    .bg-grafico-4{
+        left: -195px;
+        max-width: 400px;
+        position: absolute;
+        top: 15%;
+    }
+    .bg-grafico-5{
+        right: -275px;
+        max-width: 550px;
+        position: absolute;
+        top: 0;
+    }
     .box-ctn-portada{
         height: 200px;
         left: 50%;
@@ -246,7 +275,7 @@ html {
                     max-width: 230px;
                 }
                 .frase-titulo-3{
-                    bottom: -135px;                   
+                    bottom: -155px;                   
                     max-width: 230px;
                     right: -200%;
                 }
@@ -499,7 +528,7 @@ html {
     background-image: url('https://yac130.github.io/shakira/img/textura-negra.gif');
     background-size: cover;
     margin: 0 auto;
-    padding: 5vh 0 30vh;
+    padding: 25vh 0;
     position: relative;
     z-index: 20;
 }
@@ -521,7 +550,7 @@ html {
 }
     .main-discos h4{
         font: 42px/1 'liquidamber-reguluploadedfile';
-        margin: 0 auto 40px;
+        margin: 0 auto 30px;
         text-align: center;
     }
         .main-discos h4 span{  
@@ -529,6 +558,12 @@ html {
             font-size: 30px;    
             padding: 5px 20px;
         }
+            .main-discos h4 span img{
+                display: inline-block;
+                margin: 10px 5px;
+                max-width: 100px;
+                vertical-align: top;
+            }
             .color-verde{
                 color: #609D4F;
             }
@@ -574,6 +609,27 @@ html {
         margin: 0 auto;   
         padding: 0;
         text-align: center;
+    }
+        .box-portadita,
+        .box-portadita-sencillos{
+            min-height: 150px;
+            opacity: 0;
+        }
+        .entrar-opacidad-portadita{
+            opacity: 1;
+            transition: ease-in-out all;
+            transition-duration: .5s;
+        }
+        .salir-opacidad-portadita{
+            opacity: 0;
+        }
+    .box-portadas-discos h6,
+    .box-canciones h6,
+    .box-sencillos h6{
+        font: 15px/1.4 'prelobook';
+        margin: 20px auto;
+        max-width: 400px;
+        text-align: left;
     }
     .box-canciones ul,
     .box-sencillos ul{
@@ -622,7 +678,8 @@ html {
             text-align: left;
             vertical-align: top;
         }
-            .box-canciones ul li p{
+            .box-canciones ul li p,
+            .box-sencillos ul li p{
                 background-color: #F81616;
                 box-sizing: border-box;
                 color: #fff;
@@ -632,6 +689,9 @@ html {
                 padding: 2px 1px;                
                 text-align: center;
             }
+                p.total-sencillos{
+                    background-color: #ED95ED !important;
+                }
             .box-canciones ul li svg,
             .box-sencillos ul li svg,
             .box-hits-spotify ul li svg{
@@ -639,9 +699,15 @@ html {
                 max-width: 15px;
                 vertical-align: top;
             }
-            .box-canciones p.indicador-disco{
+            .box-canciones p.indicador-disco,
+            .box-sencillos p.indicador-disco{
                 background-color: #2e2e2e;
             }
+                .box-sencillos p.indicador-disco{
+                    color: #fff;
+                    font: 18px / 1.1 'liquidamber-reguluploadedfile';
+                    text-align: center;
+                }
     .box-sencillos{
         margin: 10px auto 40px;
         opacity: 0;
@@ -692,6 +758,7 @@ html {
             opacity: .3;
         }
         .alto{
+            color: #01d856 !important;
             height: 100px;
         }
     .box-hits{
@@ -703,12 +770,16 @@ html {
         }
             .box-hits ul li p{
                 color: #fff;
-                font: 17px / 1.1 'liquidamber-reguluploadedfile';
+                font: 16px / 1.1 'liquidamber-reguluploadedfile';
                 margin: 0 auto;
             }  
                 .nombre-album{
                     min-height: 60px;
-                }
+                }   
+                    .nombre-album span{
+                        display: block;
+                        font-size: 11px;
+                    }
             .box-hits ul li iframe{
                 transform: translate(-35%, 0);
             }
@@ -750,7 +821,7 @@ html {
                         font-size: 13px;
                     }
         .texto-hits{
-            margin: 40px auto;
+            margin: 100px auto 40px;
             max-width: 400px;
         }
             .texto-hits h3,
@@ -795,7 +866,7 @@ html {
     .main-api-spotify p{
         color: #fff;
         font: 15px/1.6 'prelobook';
-        margin: 0 auto;
+        margin: 0 auto 20px;
         max-width: 385px;
     }
         p.aviso-verde{
@@ -1065,6 +1136,12 @@ html {
                 color: #F81616;
                 font-family: 'liquidamber-reguluploadedfile'; 
             }
+            .box-cifra-youtube img{
+                margin: 8px 3px;
+                max-width: 100px;
+                display: inline-block;
+                vertical-align: top;
+            }
     .main-api-spotify::after{
         border-color: transparent transparent #101010 transparent;
     }
@@ -1186,13 +1263,21 @@ html {
     position: relative;
     z-index: 20;
 }
-    .box-separador p{
-        color: #fff;
-        font: 26px/1.2 'liquidamber-reguluploadedfile';
-        margin: 20px auto;
-        max-width: 400px;
+    .box-separador h4{
+        font: 42px/1.2 'liquidamber-reguluploadedfile';
+        margin: 0 auto;
         text-align: center;
     }
+    .box-separador p{
+        color: #fff;
+        font: 16px/1.5 'prelobook';
+        margin: 20px auto;
+        max-width: 490px;
+        text-align: center;
+    }
+        .box-separador span{
+            font-family: 'prelobold';
+        }
 .box-billboard{
     background-color: #9A70FA;    
     position: relative;
@@ -1207,6 +1292,9 @@ html {
         text-align: left;
         vertical-align: top;
     }
+        img.logo-billboard{
+            max-width: 250px;
+        }
         .box-info-billboard h4{
             color: #000000;
             font: 42px/1.1 'liquidamber-reguluploadedfile';
@@ -1631,19 +1719,19 @@ html {
                     .Alegría{
                         background-color: #d9cc5c;
                     }
-                    .disgusto{
+                    .Disgusto{
                         background-color: #1ea544;
                     }
-                    .enojo{
+                    .Enojo{
                         background-color: #c81f1f;
                     }
-                    .miedo{
+                    .Miedo{
                         background-color: #943e6d;
                     }
-                    .sorpresa{
+                    .Sorpresa{
                         background-color: #e98e25;
                     }
-                    .tristeza{
+                    .Tristeza{
                         background-color: #1e1cbc;
                     }
                     .ancho-0{ width: 3px;}
@@ -1711,7 +1799,7 @@ html {
             color: #fff;
             font: 18px/1.5 'prelobook';   
             margin: 20px auto;
-            max-width: 370px;            
+            max-width: 320px;            
         }
             .box-titular p span{
                 color: #9A70FA;
@@ -2284,6 +2372,15 @@ html {
     .shakira-portada-der,
     .shakira-portada-izq{
         display: none;
+    }
+    img.logo-billboard{
+        display: block;
+        margin: 0 20px;
+    }
+    .box-separador p{
+        font-size: 20px;
+        line-height: 1.6;
+        padding: 0 20px;
     }
 }
 
