@@ -761,7 +761,7 @@ html {
         }
         .alto{
             color: #01d856 !important;
-            height: 100px;
+            margin-bottom: 15px !important;
         }
     .box-hits{
 
@@ -787,7 +787,8 @@ html {
             .box-hits ul li iframe{
                 transform: translate(-35%, 0);
             }
-            .box-hits ul li img.btn-play{
+            .box-hits ul li img.btn-play,
+            ul.notas-hits li img.btn-play{
                 cursor: pointer;
                 display: block;
                 margin: 0 auto;
@@ -816,11 +817,13 @@ html {
                     width: 0px;          
                 }
             
-                .box-hits .box-reproducciones p{
+                .box-hits .box-reproducciones p,
+                ul.notas-hits .box-reproducciones p{
                     color: #1ED760;
                     font: 20px/1 'prelobold';
                 }
-                    .box-hits .box-reproducciones p span{
+                    .box-hits .box-reproducciones p span,
+                    ul.notas-hits .box-reproducciones p span{
                         color: #000;
                         font-size: 13px;
                     }
@@ -2376,8 +2379,18 @@ html {
     }
     .shakira-portada-der,
     .shakira-portada-izq{
-        display: none;
+       
     }
+        .box-main-portada .shakira-portada-izq.entrar-izquierda-shakira{
+            max-width: 250px;
+            top: 63px;
+        }
+        .box-main-portada .shakira-portada-der.entrar-derecha-shakira{
+            bottom: 0;
+            max-width: 300px; 
+            right: 15%;
+            top: inherit;           
+        }
     img.logo-billboard{
         display: block;
         margin: 0 20px;
@@ -2387,6 +2400,34 @@ html {
         line-height: 1.6;
         padding: 0 20px;
     }
+    .bg-grafico-1{
+        max-width: 200px;
+    }
+    .bg-grafico-2 {
+        max-width: 250px;
+        left: -188px;
+        top: 15px;
+    }
+    .bg-grafico-3{
+        bottom: -150px;
+    }
+    .bg-grafico-5{
+        max-width: 250px;
+        right: -175px;        
+    }
+    .bg-grafico-4 {
+        left: -195px;
+        max-width: 250px;
+        top: 60%;
+    }
+    .box-portadas-discos h6, 
+    .box-canciones h6, 
+    .box-sencillos h6 {
+        font: 19px / 1.6 'prelobook';
+        padding: 0 20px;
+    }
+
+
 }
 
 @media only screen and (max-width: 768px) {
