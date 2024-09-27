@@ -528,6 +528,7 @@ html {
     background-image: url('https://yac130.github.io/shakira/img/textura-negra.gif');
     background-size: cover;
     margin: 0 auto;
+    overflow: hidden;
     padding: 25vh 0;
     position: relative;
     z-index: 20;
@@ -661,7 +662,8 @@ html {
                
             }
     .box-hits ul.hits li{
-        max-width: 60px;
+        margin: 0 10px;   
+        width: 60px;       
     }
     .box-canciones{
         margin: 10px auto 40px;  
@@ -768,10 +770,12 @@ html {
             
             text-align: center;
         }
-            .box-hits ul li p{
+            .box-hits ul li p,
+            ul.notas-hits li p{
                 color: #fff;
                 font: 16px / 1.1 'liquidamber-reguluploadedfile';
                 margin: 0 auto;
+                text-align: center;
             }  
                 .nombre-album{
                     min-height: 60px;
@@ -1755,6 +1759,7 @@ html {
         position: fixed;
         right: 5%;
         top: 25%;
+        z-index: 30;
     }
         .box-resumen-sentimiento h5 {
             font: 17px/1.3 'prelobold';
