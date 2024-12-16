@@ -198,12 +198,12 @@ html {
                 position: relative; /* Necesario para que el grab-element se posicione relativo a cada <li> */
             }
 .box-main-portada{
-    /*background-color: #101010;*/
+    background-color: #101010;
     background-image: url('https://yac130.github.io/shakira/img/bg-estrellas-3.gif');
     background-repeat: no-repeat;
     background-size: 100%;
     height: 99vh;
-    mix-blend-mode: lighten;
+    /*mix-blend-mode: lighten;*/
     overflow: hidden;
     position: relative;
     z-index: 20;
