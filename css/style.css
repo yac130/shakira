@@ -2112,7 +2112,7 @@ html {
     text-align: center;
     z-index: 40;
     background-image: url('https://yac130.github.io/shakira/img/bg-estrellas-3.gif');
-    mix-blend-mode: lighten;    
+    /*mix-blend-mode: lighten;  */  
 }
     .box-footer img{
         display: block;
