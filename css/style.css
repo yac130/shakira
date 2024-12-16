@@ -265,18 +265,18 @@ html {
                 position: absolute;
             }
                 .frase-titulo-1{
-                    max-width: 230px;
+                    max-width: 285px;
                     right: -200%;
                     top: -5px;  
                 }
                 .frase-titulo-2{
-                    bottom: -115px;
+                    bottom: -170px;
                     left: -200%;
-                    max-width: 230px;
+                    max-width: 285px;
                 }
                 .frase-titulo-3{
                     bottom: -155px;                   
-                    max-width: 230px;
+                    max-width: 285px;
                     right: -200%;
                 }
 
@@ -761,7 +761,7 @@ html {
         }
         .alto{
             color: #01d856 !important;
-            margin-bottom: 15px !important;
+            margin: 10px auto !important;
         }
     .box-hits{
 
@@ -778,7 +778,7 @@ html {
                 text-align: center;
             }  
                 .nombre-album{
-                    min-height: 60px;
+                    min-height: 50px;
                 }   
                     .nombre-album span{
                         display: block;
@@ -1280,7 +1280,7 @@ html {
         font: 16px/1.5 'prelobook';
         margin: 20px auto;
         max-width: 490px;
-        text-align: center;
+        text-align: left;
     }
         .box-separador span{
             font-family: 'prelobold';
@@ -2101,6 +2101,9 @@ html {
         .ctn-metodologia p{
             font: 16px / 1.6 'prelobook';
         }
+            .ctn-metodologia p a{
+                color: #D6A852;
+            }
 .box-footer{
     /*background-color: #101010;*/
     /*background-image: url('https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_prod/especiales-multimedia/shakira/img/bg-footer.jpg');*/
@@ -2112,7 +2115,7 @@ html {
     text-align: center;
     z-index: 40;
     background-image: url('https://yac130.github.io/shakira/img/bg-estrellas-2.gif');
-    mix-blend-mode: lighten;    
+    /*mix-blend-mode: lighten;*/
 }
     .box-footer img{
         display: block;
@@ -2167,7 +2170,7 @@ html {
             font-size: 16px;
         }
     .frase-titulo-3{
-        bottom: -200px;
+        bottom: -250px;
     }
     .box-main-portada .frase-titulo-3.entrar-derecha{
         right: -10px;
@@ -2379,17 +2382,20 @@ html {
     }
     .shakira-portada-der,
     .shakira-portada-izq{
-       
+       display: none;
     }
         .box-main-portada .shakira-portada-izq.entrar-izquierda-shakira{
-            max-width: 250px;
-            top: 63px;
+            max-width: 210px;
+            top: 25px;
         }
         .box-main-portada .shakira-portada-der.entrar-derecha-shakira{
-            bottom: 0;
-            max-width: 300px; 
-            right: 15%;
+            bottom: -15px;
+            max-width: 250px; 
+            right: 57%;
             top: inherit;           
+        }
+        .frase-titulo-2{
+            bottom: -135px;
         }
     img.logo-billboard{
         display: block;
@@ -2426,7 +2432,15 @@ html {
         font: 19px / 1.6 'prelobook';
         padding: 0 20px;
     }
-
+    .box-mundo ul{
+        margin-top: 60px;
+    }
+        .box-mundo ul li{
+            max-width: 80px;
+        }
+    .box-mundo h4.ancho{
+        font-size: 40px;
+    }
 
 }
 
